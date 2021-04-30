@@ -1,16 +1,18 @@
 # Polymorphisme
-![](./images/polymorphism.png)
-
 On crée une classe *(classe dérivée, classe fille)* à partir d'une classe existante *(classe de base, classe mère, superclasse)*
 
 La classe dérivée hérite des membres de la classe de base et on peut:
 - Ajouter des membres
 - Redéfinir des méthodes (spécialiser)
 
+![](./images/polymorphism.png)
+
 # Généralisation
+On "monte" dans la hiérarchie, on généralise
 ![](./images/generalisation.png)
 
 # Spécialisation
+On "descend" dans la hiérarchie, on spécialise
 ![](./images/specialisation.png)
 
 
