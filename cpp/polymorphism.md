@@ -24,13 +24,13 @@ Rélation de type *A* possède n *B* (relation faible ou forte)
 ![](./images/aggr_comp.png)
 
 # Composition
-Un *Oiseau* a deux *Aile*s et **n'existe pas sans**
+Un *Oiseau* a deux *Aile*s et **n'existe pas sans**  
 **Relation forte**
 
 ![](./images/composition.png)
 
 # Aggrégation
-Un *Oiseau* a un *Nid* mais **peut exister sans**
+Un *Oiseau* a un *Nid* mais **peut exister sans**  
 **Relation faible**
 
 ![](./images/aggr.png)
