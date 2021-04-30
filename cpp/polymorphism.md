@@ -354,6 +354,9 @@ class Point
 
 class NamedPoint : public Point
 {
+  private:
+    char *name;
+
   ~NamedPoint()
   {
     delete []name;
