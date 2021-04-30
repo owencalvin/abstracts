@@ -76,7 +76,7 @@ class Human
   public:
     string getName()
     { 
-      return name;
+      return this->name;
     }
 
     string setName(string name)
@@ -193,25 +193,6 @@ class Human
   private:
     string name;
 };
-```
-
-# Instanciation d'un objet
-
-```cpp
-int main()
-{
-  Human clems = Human();
-  clems.say("hello");
-}
-```
-
-```cpp
-int main()
-{
-  Human *clems = new Human();
-  clems->say("hello");
-  delete clems;
-}
 ```
 
 # Constructeur
@@ -412,6 +393,35 @@ clems = new Human("clems", 185);
 Human clems;
 
 Human humans[10];
+```
+
+## Instanciation/Initialisation d'un objet
+
+```cpp
+int main()
+{
+  Human ven;                    // Constructeur: par défaut
+  Human dav("dav");             // Constructeur: Human(string name)
+  Human jerem = Human();        // Constructeur: par défaut
+  Human clems = Human("clems"); // Constructeur: Human(string name)
+
+  clems.say("hello");
+}
+```
+
+```cpp
+int main()
+{
+  Human *ven = new Human;            // Constructeur: par défaut
+  Human *jerem = new Human();        // Constructeur: par défaut
+  Human *clems = new Human("clems"); // Constructeur: Human(string name)
+
+  clems->say("hello");
+
+  delete clems;
+  delete jerem;
+  delete ven;
+}
 ```
 
 ## Initialisation temporaires
