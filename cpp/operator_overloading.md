@@ -333,8 +333,8 @@ istream& operator>>(istream &i, const Complex &c)
 On doit différencier 2 cas:
 ```cpp
 Complex c1;
-Complex c2 = c1;  // Constructeur par recopie
-c1 = c2;          // Affectation operator=
+Complex c2 = c1;  // Constructeur: par recopie
+c1 = c2;          // Affectation: operator=
 ```
 
 ```cpp
