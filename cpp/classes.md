@@ -723,6 +723,9 @@ préfixés par `-`
 ## Membres publics
 préfixés par `+`
 
+## Membres protégés
+préfixés par `#`
+
 ## Membres static
 Sont <u>soulignés</u>
 
