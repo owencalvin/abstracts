@@ -209,7 +209,7 @@ c = c1 + y;   // OK: c = operator+(c1, Complex(y));
 c = x + c2;   // OK: c = operator+(Complex(x), c2);
 
 // ATTENTION
-c = x + y   // c = operator+(Complex(x + y));
+c = x + y     // c = operator+(Complex(x + y));
 ```
 
 ### Non membre simple
@@ -297,7 +297,7 @@ Par exemple si l'on veut entrer un `Complex` au clavier sous le format:
 ```cpp
 istream& operator>>(istream &i, const Complex &c)
 {
-  char c;
+  char control_char;
   i >> control_char;
   // A écrit:       "("
   // control_char:  '('
