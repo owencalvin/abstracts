@@ -110,7 +110,7 @@ class Cylinder : protected Circle
 ```
 
 # Mode d'accès `protected`
-Comme `private` mais les classes fille peuvent y accèder
+Comme `private` mais les classes filles peuvent y accéder
 ```cpp
 class Circle {
   protected:
