@@ -340,7 +340,7 @@ Pour que le polymorphisme soit appliqué, il faut qu'une fonction *F* soit:
 - Redéfinie dans les classes dérivées de `A`
 - Appelée à travers des pointeurs ou des références
 
-## Pourquoi ne pas utiliser l'héritage simplement ?
+## Pourquoi ne pas utiliser simplement l'héritage ?
 On peut se demander pourquoi on doit utiliser le mot clé `virtual` et mettre en place le polymorphisme alors que on peut réécrire une méthode avec l'héritage simplement comme dans l'[exemple ci-dessous](https://stackoverflow.com/questions/2391679/why-do-we-need-virtual-functions-in-c)
 ```cpp
 class Animal
