@@ -414,7 +414,7 @@ fn(cat);      // Outputs: "I'm eating a rat."
 ```
 
 ## Pourquoi le polymorphisme fonctionne uniquement avec des pointeurs/références ?
-**Quand l'on fait ceci, le type de `animal` est `Animal` et non `Cat`**
+**Quand l'on fait ceci, le type de `cat` est `Animal` et non `Cat`**
 ```cpp
 Animal cat = Cat();
 
