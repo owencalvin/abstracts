@@ -413,6 +413,22 @@ fn(animal);   // Outputs: "I'm eating generic food."
 fn(cat);      // Outputs: "I'm eating a rat."
 ```
 
+## Pourquoi le polymorphisme fonctionne uniquement avec des pointeurs/références ?
+**Quand l'on fait ceci, le type de `animal` est `Animal` et non `Cat`**
+```cpp
+Animal cat = Cat();
+
+cat.eat();  // Outputs: "I'm eating generic food."
+```
+
+**Cependant en utilisant les pointeurs/références le comportement est différent**  
+`*cat` est juste un pointeur, il pointe simplement vers une case mémoire, on s'en fiche du type de la donnée mais on sait cependant que ça sera un `Animal`, grâce à `virtual` le type exact de la donnée pointée est déterminé à l'execution (*dynamic binding*) et la méthode lié à la bonne classe est alors exécutée
+```cpp
+Animal *cat = new Cat();
+
+car.eat();  // Outputs: "I'm eating generic food."
+```
+
 ## Destructeur virtuel
 Si une classe a un comportement polymorphe, son destructeur doit être `virtual`
 
