@@ -281,7 +281,8 @@ Animal *animal = cat;
 ```
 
 **Un animal n'est pas un chat**  
-Ne marcherait pas sans pointeur
+Ne marcherait pas sans pointeur  
+On doit **caster** le type
 ```cpp
 Animal *animal = new Animal();
 
