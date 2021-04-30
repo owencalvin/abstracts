@@ -8,11 +8,13 @@ La classe dérivée hérite des membres de la classe de base et on peut:
 ![](./images/polymorphism.png)
 
 # Généralisation
-On "monte" dans la hiérarchie, on généralise
+On "**monte**" dans la hiérarchie, on **généralise**
+
 ![](./images/generalisation.png)
 
 # Spécialisation
-On "descend" dans la hiérarchie, on spécialise
+On "**descend**" dans la hiérarchie, on **spécialise**
+
 ![](./images/specialisation.png)
 
 
