@@ -340,6 +340,79 @@ Pour que le polymorphisme soit appliqué, il faut qu'une fonction *F* soit:
 - Redéfinie dans les classes dérivées de `A`
 - Appelée à travers des pointeurs ou des références
 
+## Pourquoi ne pas utiliser l'héritage simplement ?
+On peut se demander pourquoi on doit utiliser le mot clé `virtual` et mettre en place le polymorphisme alors que on peut réécrire une méthode avec l'héritage simplement comme dans l'[exemple ci-dessous](https://stackoverflow.com/questions/2391679/why-do-we-need-virtual-functions-in-c)
+```cpp
+class Animal
+{
+  public:
+    void eat()
+    {
+      cout << "I'm eating generic food.";
+    }
+};
+
+class Cat : public Animal
+{
+  public:
+    void eat()
+    {
+      cout << "I'm eating a rat.";
+    }
+};
+```
+**Tout fonctionne comme on le veut**
+```cpp
+int main() {
+  Animal *animal = new Animal;
+  Cat *cat = new Cat;
+
+  animal->eat();  // Outputs: "I'm eating generic food."
+  cat->eat();     // Outputs: "I'm eating a rat."
+}
+```
+**Mais si l'on passe un `Animal` à une fonction, le type spécifique de l'`Animal` n'est pas déterminé et la méthode de la classe de base est exécutée**
+```cpp
+void fn(Animal *anAnimal)
+{
+  anAnimal->eat(); 
+}
+
+int main() {
+  Animal *animal = new Animal;
+  Cat *cat = new Cat;
+
+  fn(animal);   // Outputs: "I'm eating generic food."
+  fn(cat);      // Outputs: "I'm eating generic food."
+}
+```
+
+**Si on ajoute `virtual` devant la méthode parente, on a réglé le problème et mis en place du polymorphisme**
+```cpp
+class Animal
+{
+  public:
+    virtual void eat()
+    {
+      cout << "I'm eating generic food.";
+    }
+};
+
+class Cat : public Animal
+{
+  public:
+    void eat()
+    {
+      cout << "I'm eating a rat.";
+    }
+};
+```
+
+```cpp
+fn(animal);   // Outputs: "I'm eating generic food."
+fn(cat);      // Outputs: "I'm eating a rat."
+```
+
 ## Destructeur virtuel
 Si une classe a un comportement polymorphe, son destructeur doit être `virtual`
 
