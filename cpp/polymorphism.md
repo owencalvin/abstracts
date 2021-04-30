@@ -334,11 +334,7 @@ C'est la faculté qu'on les objets de types différents d'avoir des méthodes de
 
 Le programmeur n'a pas à se soucier du type de l'objet
 
-Le polymorphisme est implémenté avec le mot clé `virtual`
-
-Pour avoir un comportement polymorphique, les méthodes appelées doivent être `virtual` et les objets doivent être **manipulés avec des pointeurs ou références**
-
-Pour que le polymorphisme soit appliqué, il faut qu'une fonction F soit:
+Pour que le polymorphisme soit appliqué, il faut qu'une fonction *F* soit:
 - Membre d'une classe `A`
 - Déclarée comme `virtual`
 - Redéfinie dans les classes dérivées de `A`
