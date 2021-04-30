@@ -41,7 +41,7 @@ Un *Oiseau* hérite d'un *Animal* car il **est** un *Animal* mais est plus **sp�
 ![](./images/inheritance.png)
 
 ## Exemple
-Un cylindre est une **spécialisation** d'un cercle (un cercle est plus général)  
+Un cylindre est plus **spécial** qu'un cercle (un cercle est plus général)  
 La classe `Cylinder` hérite de la classe `Circle`
 
 ![](./images/circle.png)
