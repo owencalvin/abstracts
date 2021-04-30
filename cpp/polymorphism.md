@@ -71,6 +71,8 @@ class Cylinder: public Circle {
 ## Public
 Les membres conservent leurs accessibilité
 
+> Le mode le plus utilisé
+
 ```cpp
 class Cylinder : public Circle
 {
