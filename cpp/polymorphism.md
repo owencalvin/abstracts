@@ -426,7 +426,7 @@ cat.eat();  // Outputs: "I'm eating generic food."
 ```cpp
 Animal *cat = new Cat();
 
-car.eat();  // Outputs: "I'm eating generic food."
+car.eat();  // Outputs: "I'm eating a rat."
 ```
 
 ## Destructeur virtuel
