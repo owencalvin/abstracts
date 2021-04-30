@@ -492,7 +492,6 @@ C::f 30
 ```
 > On voit l'ordre d'appel des constructeur qu'on a définit, B puis A
 
-# Héritage virtuel
 ## Problème
 Comment faire si une classe hérite de deux classes `A` et `B` héritant toutes les deux de la même classe `R`
 
@@ -553,7 +552,7 @@ int main()
 error 'R' is an ambigous base of C
 ```
 
-## Solution
+## Solution (héritage virtuel)
 
 `A` et `B` héritent **virtuellement** de la classe `R`
 
