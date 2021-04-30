@@ -386,6 +386,7 @@ virtual void show() = 0;
 ![](./images/abstract_class.png)
 
 # Référence à la classe de base
+On peut utiliser la syntaxe `obj.BaseClass::member`
 ```cpp
 class A
 {
