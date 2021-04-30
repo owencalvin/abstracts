@@ -166,7 +166,7 @@ Cylinder::Cylinder(
   int r,
   int h
 ) : Circle(r)
-// Appel le constructeur de la classe parente
+// : Circle(r) Appel le constructeur de la classe parente
 {
   this->h = h;
 }
