@@ -259,7 +259,7 @@ fn(&value)
 
 ### Par référence-adresse
 Si `arg` est modifié alors `value` l'est aussi  
-> Fonctionne un peu comme l'exemple ci-dessus à mais on a pas besoin de déréférencer `arg` (`*arg`) pour accéder à sa valeur
+> Fonctionne un peu comme l'exemple ci-dessus à mais on n'a pas besoin de déréférencer `arg` (`*arg`) pour accéder à sa valeur
 ```cpp
 int value;
 
