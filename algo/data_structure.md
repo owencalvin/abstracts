@@ -13,6 +13,7 @@ Elle utilise les notions de:
 ## Solution concrète
 On implémente un **programme (traitement)** qui utilise des **types concrets de données (informations)**
 
+## En résumé
 |   | **Données** | **Traitements** |  
 | - | ----------- | --------------- |
 | **Abstrait** | Type abstrait de données | Algorithme |  
