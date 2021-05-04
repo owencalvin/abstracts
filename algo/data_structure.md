@@ -1,4 +1,4 @@
-# Qu'est-ce qu'un algorithme
+# Abstrait / Concret
 Pour ne pas refaire tout le travail lorsque l'on change de language de programmation par exemple, on sépare notre projet en une **solution abstraite** et une **solution concrète**
 
 Ce qui permet d'avoir une solution indépendante de **l'implémentation** (machine, langage, types, ...)
