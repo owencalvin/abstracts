@@ -126,6 +126,7 @@ On dit que l'**ordre de grandeur asymptotique** de `f(n)` est strictement plus g
 ![](./images/complexity.png)
 
 ## Tableaux
+Voici un tableau montrant les différentes informations sur les fonctions de complexité
 
 ### Temps d'execution
 Temps d'éxecution de ces algorithmes pour différente taille de données n   
@@ -138,3 +139,19 @@ Temps d'éxecution de ces algorithmes pour différente taille de données n
 La taille maximale des données que l'on peut traiter par chacun des algorithmes pour un certain temps
 
 ![](./images/data_size.png)
+
+### Evolution de la taille des données et du temps d'éxecution
+Montre comment la taille des données et le temps d'éxecution varient en fonction de l'un l'autre
+
+![](./images/size_time.png)
+
+### Conclusion
+
+#### Algorithme en temps polynomial
+Les algorithme en temps polynomial (`n^k, k > 0`) sont vraiment utilisable que pour `k < 2`  
+Lorsque `2 <= k <= 3`, on peut régler des problème de taille moyenne  
+Lorsque `k > 3`, on peut régler des petits problèmes
+
+
+#### Algorithme en temps exponentiel
+Les algorithme en temps exponentiel `2^n` sont pas vraiment utilisable, que pour les problèmes de petites tailles
