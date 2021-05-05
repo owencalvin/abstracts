@@ -43,6 +43,8 @@ Ceci est uniquement un parcours qui compare deux clés, il faut faire ceci pour 
 Il fait le `Parcours` de 1 à N - 1 fois  
 (au final l'opération est faite N - 2 fois)
 
+> j &larr; 1 car on compare les éléments i et i - 1
+
 ## Exemple
 Ce schéma montre l'évolution du tableau, à gauche le tableau n'est pas trié
 
