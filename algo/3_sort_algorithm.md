@@ -55,10 +55,17 @@ On voir que l'élément avec une clé la plus petite (1)remonte dans le tableau 
 
 `Parcours(T, 0, 7)`  
 ![](images/bubble_sort1.png)
+![](images/bubble_sort6.png)
+
+> Haut = 0, Bas = 7
 
 ## Améliorations
 
 ### Bubble Sort Itératif
+Après j parcours, nous avons définitivement placé les j plus petites clés.  
+On a donc plus besoin de se soucier de ces éléments, on peut alors commencer notre parcours à `Haut + j` (`0 + j`)
+
+---
 
 `BubbleSortIteratif(T: tableau, Haut: int, Bas: int)`
 ![](images/bubble_sort4.png)
@@ -68,6 +75,17 @@ Le nombre d'échange devient:
 Donc la complexité est quadratique `O(n^2)`
 
 ### Bubble Sort Drapeau
+Un tableau peut être trié avant la fin de la boucle (car plus d'un élément peut remonter lors d'un seul parcours), il est alors judicieux de stopper la boucle si le tableau est entièrement trié
+
+On utilise la notion de "drapeau" qui permet de déterminer si le tableau est déjà trié
+
+Le "drapeau" est baissé au début du parcours du tableau et on le lève lors d'un échange
+
+**Si aucun échange à été fait lors d'un parcours cela signifie qu'on a terminé le tri &rarr; Drapeau à Faux**
+
+On test alors l'état du drapeau avant de reparcourir le tableau
+
+---
 
 `BubbleSortDrapeau(T: tableau, Haut: int, Bas: int)`
 ![](images/bubble_sort5.png)
@@ -77,6 +95,10 @@ Le nombre d'échange reste `N(N - 1) / 2` mais la complexité à augmenté (donc
 Cette méthode est adapté pour les tableaux presque complètement triés
 
 ## Stabilité
+**On sait qu'un algorithme de tri est stable s'il n'échange pas la position de 2 valeurs égales**
+
+---
+
 Soient deux éléments du tableau, ayant la même clé, et d’indices i et j avec i < j
 
 Tout élément de clé strictement **inférieure** se placera **au-dessus** d’eux et tout élément de clé strictement **supérieure** se placera **au-dessous** d’eux
@@ -103,3 +125,8 @@ Le nombre maximum de déplacements
 `Dmax = 3n(n - 1) / 2` 
 
 > Un échange continent 3 déplacement (3 affectations), ce qui explique le facteur 3 dans le nombre d'opération effectuées
+
+## Visualisation du Bubble Sort
+![](images/bubble_sort7.png)
+
+> [Source](https://corte.si/posts/code/visualisingsorting/)
