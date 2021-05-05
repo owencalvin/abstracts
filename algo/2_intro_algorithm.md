@@ -172,12 +172,192 @@ Les algorithme en temps exponentiel `2^n` sont pas vraiment utilisable, que pour
 ##  Nombre pair ou impair
 `O(1)`  
 Complexité constante
-```cpp
-bool isEven(n)
-{
-  return n % 2 == 0; // Opération fondamentale
+
+```js
+function isEvenOrOdd(n) {
+  return n % 2 ? 'Odd' : 'Even';
 }
 ```
 
+##  Binary search
+`O(log n)`  
+Complexité logarithmique
+
+```js
+function indexOf(array, element, offset = 0) {
+  const half = parseInt(array.length / 2);
+  const current = array[half];
+
+  if(current === element) {
+    return offset + half;
+  } else if(element > current) {
+    const right = array.slice(half);
+    return indexOf(right, element, offset + half);
+  } else {
+    const left = array.slice(0, half)
+    return indexOf(left, element, offset);
+  }
+}
+```
+
+## Nombre max dans un tableau non trié
+`O(n)`  
+Complexité linéaire
+
+```js
+function findMax(n) {
+  let max;
+  let counter = 0;
+
+  for (let i = 0; i < n.length; i++) {
+    counter++;
+    if(max === undefined || max < n[i]) {
+      max = n[i];
+    }
+  }
+
+  return max;
+}
+```
+
+## Merge sort
+`O(n log n)`  
+Complexité quasi-linéaire (linearithmic)
+
+```js
+/**
+ * Sort array in asc order using merge-sort
+ * @example
+ *    sort([3, 2, 1]) => [1, 2, 3]
+ *    sort([3]) => [3]
+ *    sort([3, 2]) => [2, 3]
+ * @param {array} array
+ */
+function sort(array = []) {
+  const size = array.length;
+  // base case
+  if (size < 2) {
+    return array;
+  }
+  if (size === 2) {
+    return array[0] > array[1] ? [array[1], array[0]] : array;
+  }
+  // slit and merge
+  const mid = parseInt(size / 2, 10);
+  return merge(sort(array.slice(0, mid)), sort(array.slice(mid)));
+}
+
+/**
+ * Merge two arrays in asc order
+ * @example
+ *    merge([2,5,9], [1,6,7]) => [1, 2, 5, 6, 7, 9]
+ * @param {array} array1
+ * @param {array} array2
+ * @returns {array} merged arrays in asc order
+ */
+function merge(array1 = [], array2 = []) {
+  const merged = [];
+  let array1Index = 0;
+  let array2Index = 0;
+
+  // merge elements on a and b in asc order. Run-time O(a + b)
+  while (array1Index < array1.length || array2Index < array2.length) {
+    if (array1Index >= array1.length || array1[array1Index] > array2[array2Index]) {
+      merged.push(array2[array2Index]);
+      array2Index += 1;
+    } else {
+      merged.push(array1[array1Index]);
+      array1Index += 1;
+    }
+  }
+  return merged;
+}
+```
+
+## Bubble sort
+`O(n^2)`  
+Complexité quadratique
+
+```js
+function sort(n) {
+  for (let outer = 0; outer < n.length; outer++) {
+    let outerElement = n[outer];
+
+    for (let inner = outer + 1; inner < n.length; inner++) {
+      let innerElement = n[inner];
+
+      if(outerElement > innerElement) {
+        // swap
+        n[outer] = innerElement;
+        n[inner] = outerElement;
+        // update references
+        outerElement = n[outer];
+        innerElement = n[inner];
+      }
+    }
+  }
+  return n;
+}
+```
+
+## Résolution système à 3 inconnues
+`O(n^2)`  
+Complexité quadratique
+
+```js
+function findXYZ(n) {
+  const solutions = [];
+
+  for(let x = 0; x < n; x++) {
+    for(let y = 0; y < n; y++) {
+      for(let z = 0; z < n; z++) {
+        if( 3*x + 9*y + 8*z === 79 ) {
+          solutions.push({x, y, z});
+        }
+      }
+    }
+  }
+
+  return solutions;
+}
+```
+
+## Trouver tous les sous-ensembles
+`O(2^n)`  
+Complexité exponentielle
+
+```js
+function powerset(n = '') {
+  const array = Array.from(n);
+  const base = [''];
+
+  const results = array.reduce((previous, element) => {
+    const previousPlusElement = previous.map(el => {
+      return `${el}${element}`;
+    });
+    return previous.concat(previousPlusElement);
+  }, base);
+
+  return results;
+}
+```
+
+## Trouver tous les sous-ensembles
+`O(n!)`  
+Complexité factorielle
+
+```js
+function getPermutations(string, prefix = '') {
+  if(string.length <= 1) {
+    return [prefix + string];
+  }
+
+  return Array.from(string).reduce((result, char, index) => {
+    const reminder = string.slice(0, index) + string.slice(index+1);
+    result = result.concat(getPermutations(reminder, prefix + char));
+    return result;
+  }, []);
+}
+```
 
 > [Source](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/)
