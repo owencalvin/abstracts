@@ -167,7 +167,7 @@ Les algorithme en temps exponentiel `2^n` sont pas vraiment utilisable, que pour
 | `O(n^2)` | Quadratique | Moyenne | Trier un tableau avec "Bubble sort" |
 | `O(n^3)` | Cubique | Moyenne | Résolution de système à 3 inconnues |
 | `O(2^n)` | Exponentielle | Lente | Trouver tous les sous-ensembles |
-| `O(2^n)` | Factorielle | Lente | Trouver toutes les permutations d'un ensemble |
+| `O(n!)` | Factorielle | Lente | Trouver toutes les permutations d'un ensemble |
 
 ##  Nombre pair ou impair
 `O(1)`  
