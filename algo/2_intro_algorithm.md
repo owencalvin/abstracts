@@ -156,7 +156,7 @@ Lorsque `k > 3`, on peut régler des petits problèmes
 #### Algorithme en temps exponentiel
 Les algorithme en temps exponentiel `2^n` sont pas vraiment utilisable, que pour les problèmes de petites tailles
 
-# Quelques algorithmes avec leurs complexité
+# Quelques algorithmes avec leur complexité
 
 | Notation grand O | Nom | "Rapidité" | Exemple |
 | ---------------- | --- | ---------- | ----------- |
