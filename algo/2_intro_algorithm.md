@@ -155,3 +155,29 @@ Lorsque `k > 3`, on peut régler des petits problèmes
 
 #### Algorithme en temps exponentiel
 Les algorithme en temps exponentiel `2^n` sont pas vraiment utilisable, que pour les problèmes de petites tailles
+
+# Quelques algorithmes avec leurs complexité
+
+| Notation grand O | Nom | "Rapidité" | Exemple |
+| ---------------- | --- | ---------- | ----------- |
+| `O(1)` | Constant | Rapide | Nombre pair ou impair |
+| `O(log n)` | Logarithmique | Rapide | Trouver un élément dans un tableau trié avec du "Binary search" |
+| `O(n)` | Linéaire | Rapide | Trouver le plus grand élément dans un tableau (non trié) |
+| `O(n log n)` | Quasi-linéaire (Linearithmic) | Rapide | Trier un tableau avec "Merge sort" |
+| `O(n^2)` | Quadratique | Moyenne | Trier un tableau avec "Bubble sort" |
+| `O(n^3)` | Cubique | Moyenne | Résolution de système à 3 inconnues |
+| `O(2^n)` | Exponentielle | Lente | Trouver tous les sous-ensembles |
+| `O(2^n)` | Factorielle | Lente | Trouver toutes les permutations d'un ensemble |
+
+##  Nombre pair ou impair
+`O(1)`  
+Complexité constante
+```cpp
+bool isEven(n)
+{
+  return n % 2 == 0; // Opération fondamentale
+}
+```
+
+
+> [Source](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/)
