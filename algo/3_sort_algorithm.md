@@ -130,3 +130,69 @@ Le nombre maximum de déplacements
 ![](images/bubble_sort7.png)
 
 > [Source](https://corte.si/posts/code/visualisingsorting/)
+
+# Tri par extraction (ou tri par séléction)
+
+## Première étape: extraction
+La première étape consiste à extraire l’élément ayant la plus petite clé et à l’échanger avec l’élément de **Gauche** du tableau
+
+Pour trouver la plus petite clé le tableau est parcouru de **Gauche** à **Droite**, on garde en mémoire l'indice de la plus petite clé rencontrée
+
+![](images/extraction_sort1.png)
+
+### Structogramme
+
+`PlacerLeMinimumÀGauche(T: tableau, Gauche: int, Droite: int)`
+![](images/extraction_sort2.png)
+
+## Deuxième étape: entièreté du tableau
+On applique ceci pour tout le tableau, pour cela il faut que qu'on opère uniquement sur la partie du tableau qui n'est pas encore trié:  
+
+1. De **Gauche + 0** à **Droite**
+2. De **Gauche + 1** à **Droite**
+3. De **Gauche + 2** à **Droite**
+4. ...
+5. De **Droite - 1** à **Droite**
+
+**Gauche + C** est la partie déjà trié du tableau
+
+> Lorsque les N − 1 éléments ayant les clés les plus petites sont à leur place, le dernier élément qui a la plus grande clé est aussi à sa place
+
+![](images/extraction_sort4.png)
+
+### Structogramme
+
+![](images/extraction_sort3.png)
+
+
+## Complexité
+`PlacerLeMinimumAGauche` est executé `N - 1` fois pour un tableau de N éléments, à chaque execution l'algorithme effectue `Droite - Gauche + 1` comparaisons, le nombre de comparaison est donc
+  
+`C = ((N - 1) + 1) + ((N - 2) + 1) + ... + (3 + 1) + (2 + 1) + (1 + 1)`  
+`C = N(N + 1) / 2 - 1`
+
+> 1. `Droite = N` `Gauche = 1`  
+> 2. `Droite = N` `Gauche = 2`  
+> 3. `Droite = N` `Gauche = 3`  
+> 4. ...
+> 5. `Droite = N` `Gauche = N - 3`
+> 5. `Droite = N` `Gauche = N - 2`
+> 5. `Droite = N` `Gauche = N - 1`
+
+Si les clés sont triées, le nombre de déplacement est **au minimum**  
+`Dmin = 0`
+
+Dans le pire des cas (chaque itération provoque un échange)  
+`Dmax = 3(N - 1)`
+
+## Stabilité
+Voici un tableau avec deux clés identiques:
+
+![](images/extraction_sort5.png)
+
+En extrayant le premier minimum ça donne:
+
+![](images/extraction_sort6.png)
+
+
+**On voit que l'algorithme n'est pas stable**, car B (15) peut venir après A (15) 
