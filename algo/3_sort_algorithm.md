@@ -34,12 +34,12 @@ On compare les clés de deux élément consécutifs à partir du début jusqu'à
 
 ## Structogramme
 
-`Parcours(T: Tableau, Haut: int, Bas: int)`
-![](images/bubble_sort2.png)
+`Parcours(T: Tableau, Haut: int, Bas: int)`  
+![](images/bubble_sort2.png)  
 Ceci est uniquement un parcours qui compare deux clés, il faut faire ceci pour tout le tableau
 
-`BubbleSort(T: Tableau, Haut: int, Bas: int)`
-![](images/bubble_sort3.png)
+`BubbleSort(T: Tableau, Haut: int, Bas: int)`  
+![](images/bubble_sort3.png)  
 Il fait le `Parcours` de 1 à N - 1 fois (N - 2 fois)
 
 ## Exemple
@@ -47,5 +47,5 @@ Ce schéma montre l'évolution du tableau, à gauche le tableau n'est pas trié
 
 On voir que l'élément avec une clé la plus petite (1)remonte dans le tableau jusqu'à atteindre la première place
 
-`Parcours(T, 0, 7)`
+`Parcours(T, 0, 7)`  
 ![](images/bubble_sort1.png)
