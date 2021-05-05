@@ -40,7 +40,8 @@ Ceci est uniquement un parcours qui compare deux clés, il faut faire ceci pour 
 
 `BubbleSort(T: Tableau, Haut: int, Bas: int)`  
 ![](images/bubble_sort3.png)  
-Il fait le `Parcours` de 1 à N - 1 fois (N - 2 fois)
+Il fait le `Parcours` de 1 à N - 1 fois  
+(au final l'opération est faite N - 2 fois)
 
 ## Exemple
 Ce schéma montre l'évolution du tableau, à gauche le tableau n'est pas trié
