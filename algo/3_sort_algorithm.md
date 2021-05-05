@@ -34,11 +34,11 @@ On compare les clés de deux élément consécutifs à partir du début jusqu'à
 
 ## Structogramme
 
-`Parcours(T: Tableau, Haut: int, Bas: int)`  
+`Parcours(T: Tableau, Haut: Entier, Bas: Entier)`  
 ![](images/bubble_sort2.png)  
 Ceci est uniquement un parcours qui compare deux clés, il faut faire ceci pour tout le tableau
 
-`BubbleSort(T: Tableau, Haut: int, Bas: int)`  
+`BubbleSort(T: Tableau, Haut: Entier, Bas: Entier)`  
 ![](images/bubble_sort3.png)  
 Il fait le `Parcours` de 1 à N - 1 fois  
 (au final l'opération est faite N - 2 fois)
@@ -67,7 +67,7 @@ On a donc plus besoin de se soucier de ces éléments, on peut alors commencer n
 
 ---
 
-`BubbleSortIteratif(T: tableau, Haut: int, Bas: int)`
+`BubbleSortIteratif(T: tableau, Haut: Entier, Bas: Entier)`
 ![](images/bubble_sort4.png)
 
 Le nombre d'échange devient:  
@@ -87,7 +87,7 @@ On test alors l'état du drapeau avant de reparcourir le tableau
 
 ---
 
-`BubbleSortDrapeau(T: tableau, Haut: int, Bas: int)`
+`BubbleSortDrapeau(T: tableau, Haut: Entier, Bas: Entier)`
 ![](images/bubble_sort5.png)
 
 Le nombre d'échange reste `N(N - 1) / 2` mais la complexité à augmenté (donc la duré d'exécution aussi)
@@ -142,7 +142,7 @@ Pour trouver la plus petite clé le tableau est parcouru de **Gauche** à **Droi
 
 ### Structogramme
 
-`PlacerLeMinimumÀGauche(T: tableau, Gauche: int, Droite: int)`
+`PlacerLeMinimumÀGauche(T: tableau, Gauche: Entier, Droite: Entier)`
 ![](images/extraction_sort2.png)
 
 ## Deuxième étape: entièreté du tableau
@@ -196,3 +196,66 @@ En extrayant le premier minimum ça donne:
 
 
 **On voit que l'algorithme n'est pas stable**, car B (15) peut venir après A (15) 
+
+# Tri par insertion
+On insère un élément du tableau qui n’est pas encore à sa place dans une partie déjà ordonnée, puis à recommencer avec les éléments suivants
+
+La première étape montre comment insérer un élément dans la partie déjà triée
+
+Dans cet exemple, les éléments `Gauche` à `i - 1` sont déjà ordonnés, on veut insérer l'élément `i`
+
+![](images/insertion_sort1.png)
+
+Pour insérer l’élément d’indice `i` dans la partie du tableau trié, il faut le sauvegarder puis décaler vers la droite tous les éléments dont la clé est supérieure à l’élément à insérer
+
+Du coup l’emplacement de l’élément à insérer est trouvé et une case libre est préparée à l'emplacement
+
+![](images/insertion_sort2.png)
+
+
+## Insertion élément d'indice i
+
+### Structogramme
+`Insertion Elément d'Indice i (T: Tableau, Gauche: Entier, i: Entier)`
+![](images/insertion_sort3.png)
+
+
+## Tri Insertion itératif
+Pour trier complètement le tableau on insère ses éléments en commençant par le deuxième élément (indice `Gauche + 1`) et en terminant par le dernier élément du tableau (indice `Droite`)
+
+![](images/insertion_sort5.png)
+
+### Structogramme
+`Tri Insertion itératif (T: Tableau, Gauche: Entier, Droite: Entier)`
+![](images/insertion_sort4.png)
+
+## Complexité
+**Au maximum**, le nombre de comparaisons pour l'insertion du i pme élément est (si à l'origine la clé à insérer est plus grande que toutes les autres):  
+`i - 1`
+
+**Au minimum**, le nombre de comparaisons est de:  
+`1`
+
+**En moxenne**, le nombre de comparaisons est de (en supposant que toutes les permutations de n clés soient équiprobables):  
+`i / 2`
+
+Le nombre total de comparaisons et le nombre total de de déplacements sont:
+
+`Cmin = n - 1`  
+`Cmoy = (n^2 + n - 2) / 4`   
+`Cmax = n(n - 1) / 2`  
+
+`Dmin = 2(n - 1)`  
+`Dmoy = (n^2 + 7n - 8) / 4`  
+`Dmax = (n^2 + 3n - 4) / 2`  
+
+## Stabilité
+Soit deux éléments du tableau, ayant la même clef, et d’indices `i` et `j` avec `i < j`
+
+Puisque on parcours le tableau de `Gauche + 1` à `Droite`, l'élément à l'indice `i` sera inséré en premier dans la partie trié à l'indice `i'`
+
+Quand l'élément à l'indice `j` doit être inséré il sera mis à l'indice `i' + 1` (car on utilise une comparaison stricte des éléments `t[i'] > t[j] == false`)
+
+L'élément à l'indice `i` se trouve donc avant `j`, l'ordre est gardé
+
+**L'algorithme est stable**
