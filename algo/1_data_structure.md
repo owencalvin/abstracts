@@ -150,11 +150,13 @@ Ils peuvent être
 ### Que signifie accès "direct" / "séquentiel"
 **Direct**  
 Tous les éléments peuvent être accédés dans n'importe quel ordre  
+On accède **directement** à un élément  
 (tableau)
 
 **Séquentiel**  
 Les éléments doivent être accédés dans un certain ordre  
-(pile)
+Pour accéder à un élément on parcours la structure de donnée  
+(pile, liste chaînée)
 
 ### Que signifie "linéaire"
 Une structure de données linéaire contient un unique premier et dernier élément.
