@@ -21,7 +21,6 @@ Une division avec un nombre **fini** de décimal est une **opération effective*
 
 Une division avec un nombre **infini** de décimales n'est **pas une opération effective**
 
-
 # Complexité d'un algorithme
 Le but est de déterminer:
 - **Le temps d'éxecution**
@@ -120,6 +119,68 @@ Car `f(n) = n^2` croît plus vite que `g(n) = n`
 On dit que l'**ordre de grandeur asymptotique** de `f(n)` est strictement plus grand que celui de `g(n)`
 
 > On dit aussi que "`f` domine `g` quand `n` temps vers l'infini"
+
+## Calculer la complexité
+```cpp
+int x = 5;
+int polynom[3] = {4, 1, 5}
+int res = 0;
+
+// 4x^0 + 1x^1 + 5x^2
+// x: 5, result: 134
+for (int i = 0; i < 3; i++)
+{
+  int resPow = pow(x, i);
+  res += polynom[i] * resPow;
+}
+```
+On définit l'opération fondamentale: **multiplication**
+
+En **déroulant** l'algorithme on a en nombre d'opérations fondamentales:  
+
+1. `int resPow = pow(x, i);` `(x^0 = 1)` &rarr; 0  
+   `res += polynom[i] * resPow` `(4 * 1 = 4)` &rarr; 1   
+   Total &rarr; 1
+
+2. `int resPow = pow(x, i);` `(x = x)` &rarr; 0  
+   `res += polynom[i] * resPow` `(1 * 5 = 4)` &rarr; 1   
+   Total &rarr; 1 
+
+3. `int resPow = pow(x, i);` `(x * x = x)` &rarr; 1  
+   `res += polynom[i] * resPow` `(5 * 5 = 4)` &rarr; 1   
+   Total &rarr; 2 
+
+Continuons hors de l'execution...
+   
+4. `int resPow = pow(x, i);` `(x * x * x = x)` &rarr; 2  
+   `res += polynom[i] * resPow` &rarr; 1   
+   Total &rarr; 3
+
+5. `int resPow = pow(x, i);` `(x * x * x * x = x)` &rarr; 3  
+   `res += polynom[i] * resPow` &rarr; 1   
+   Total &rarr; 4
+
+6. `int resPow = pow(x, i);` `(x * x * x * x * x = x)` &rarr; 4  
+   `res += polynom[i] * resPow` &rarr; 1   
+   Total &rarr; 5 
+
+7. ...
+
+Sommons tous ça
+`n` est le degré du polynome (taille du tableau - 1)
+
+`(0 + 1) + (0 + 1) + (1 + 1) + (2 + 1) + (3 + 1) + (4 + 1) + ... + n`  
+`1 + 1 + 2 + 3 + 4 + 5 + ... + n`
+
+On voit qu'on a une suite arithmétique, utilisons la formule de sommation
+
+`O(n) = (n + 1)(0 + n) / 2 + 1 = n(n + 1) / 2 + 1`
+
+> `+ 1` car on a un `1` avant le début de la suite
+
+En simplifié:
+
+`O(n) = n^2`
 
 ## Ordres de grandeurs asymptotiques
 
