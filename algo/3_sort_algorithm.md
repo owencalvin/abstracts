@@ -87,7 +87,7 @@ On test alors l'état du drapeau avant de reparcourir le tableau
 
 ---
 
-`BubbleSortDrapeau(T: tableau, Haut: Entier, Bas: Entier)`
+`BubbleSortDrapeau(T: tableau, Haut: Entier, Bas: Entier)`  
 ![](images/bubble_sort5.png)
 
 Le nombre d'échange reste `N(N - 1) / 2` mais la complexité à augmenté (donc la duré d'exécution aussi)
