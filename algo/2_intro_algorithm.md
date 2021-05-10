@@ -89,7 +89,7 @@ En général, la complexité d'un algorithme est **fonction de la taille des don
 On détermine alors la rapidité de croissance de cette fonction lorsque la taille des données croît
 
 ## Exemple 1
-Pour 3 algorithmes avec faisant `A1(n)`, `A2(n)` et `A3(n)` opérations
+Pour 3 algorithmes faisant `A1(n)`, `A2(n)` et `A3(n)` opérations
 
 `A1(n) = n + C`  
 `A2(n) = 2n`  
@@ -100,7 +100,7 @@ On sait que `A1` est mieux que `A2` qui est mieux que `A3`
 > `A2` est mieux que `A3` dès que `n >= 2`
 
 ## Exemple 2
-Pour 2 algorithmes avec faisant `A1(n)` et `A2(n)` opérations
+Pour 2 algorithmes faisant `A1(n)` et `A2(n)` opérations
 
 `A1(n) = 3(n^2)`  
 `A2(n) = 25n`  
@@ -108,7 +108,7 @@ Pour 2 algorithmes avec faisant `A1(n)` et `A2(n)` opérations
 On sait que `A2` est mieux que `A1` dès que `n > 8`
 
 ## Exemple 3
-Pour 2 algorithmes avec faisant `A1(n)` et `A2(n)` opérations
+Pour 2 algorithmes faisant `A1(n)` et `A2(n)` opérations
 
 `A1(n) = a(n^2)`  
 `A2(n) = bn`  
