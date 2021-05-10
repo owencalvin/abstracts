@@ -105,7 +105,7 @@ Pour 2 algorithmes faisant `A1(n)` et `A2(n)` opérations
 `A1(n) = 3(n^2)`  
 `A2(n) = 25n`  
 
-> `A2` est mieux que `A1` dès que `n > 8`
+`A2` est mieux que `A1` (dès que `n > 8`)
 
 ## Exemple 3
 Pour 2 algorithmes faisant `A1(n)` et `A2(n)` opérations
