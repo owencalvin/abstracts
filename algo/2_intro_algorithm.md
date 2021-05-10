@@ -97,7 +97,7 @@ Pour 3 algorithmes faisant `A1(n)`, `A2(n)` et `A3(n)` opérations
 
 On sait que `A1` est mieux que `A2` qui est mieux que `A3`
 
-> `A2` est mieux que `A3` dès que `n >= 2`
+> `A2` est mieux que `A3` dès que `n > 2`
 
 ## Exemple 2
 Pour 2 algorithmes faisant `A1(n)` et `A2(n)` opérations
