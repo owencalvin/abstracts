@@ -362,8 +362,8 @@ function sort(n) {
 ```
 
 ## Résolution système à 3 inconnues
-`O(n^2)`  
-Complexité quadratique
+`O(n^3)`  
+Complexité cubique
 
 ```js
 function findXYZ(n) {
