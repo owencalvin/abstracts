@@ -259,3 +259,66 @@ Quand l'élément à l'indice `j` doit être inséré il sera mis à l'indice `i
 L'élément à l'indice `i` se trouve donc avant `j`, l'ordre est gardé
 
 **L'algorithme est stable**
+
+
+# Radix sort (tri par base)
+Cette méthode de tri consiste à trier les clés  selon  la  valeur  des  **unités**,  puis  selon  celle  des  **dizaines**,  puis  **centaines**, ..., jusqu’au chiffre le plus à gauche
+
+![](images/2021-06-30-11-02-40.png)
+
+Après autant de passes que le nombre de chiffres de la plus grande des clé (ici 3), le tableau est trié
+
+**[Vidéo d'explication](https://youtu.be/nu4gDuFabIM)**
+
+Cette méthode peut s’appliquer à des clés non numériques (chaines de caractères) si on a une relation d’ordre entre les symboles utilisés (ordre alphabétique pour une chaîne de caractères).
+
+## Structogramme
+
+### Structogramme des fonctions internes
+Le structogramme ci-dessus décrit les opérations nécessaires pour trier le tableau selon le nième chiffre (1 pour l’unité, 2 pour la dizaine, etc...)
+
+![](2021-06-30-11-05-23.png)
+
+Dans ce structogramme:
+- **casier**  
+  Est un tableau de files permettant d’ordonner *tab* suivant son n-ième
+
+- **chiffre**  
+  *casier\[x]* contiendra les nombres dont le n-ième chiffre est *x*. 
+
+L’idée est de commencer par distribuer dans ces files les valeurs de *tab*, puis dans un second temps, de mettre à jour le tableau en vidant les files par ordre croissant
+
+Il y a plusieurs façons de déterminer le nième chiffre d’un nombre.  
+*Extraire le chiffre des dizaine de 123 => 2
+
+- Convertir le nombre en chaine de caractère, puis extraire le caractère désiré
+
+- Arithmétique: 1984 = 1 x 103 + 9 x 102 + 8 x 101 + 4 x 100, on peut donc aisément retrouver la valeur de chaque chiffre grâce à des divisions par des puissances de 10 et l’opérateur modulo.
+
+### Structogramme complet
+![](images/2021-06-30-11-16-00.png)
+
+## Visualisation
+![](images/2021-06-30-11-17-02.png)
+
+## Analyse
+Contrairement aux autres algorithmes de tri simples, le tri par base n’utilise pas de comparaisons. Il fait partie des tris par distribution
+
+C’est la copie des valeurs dans des files qui permet le tri, on choisi alors l'**affectation** comme opération élémentaire
+
+Pour trier un tableau de **taille n**, on doit effectuer **k passes**, avec *k* le nombre de chiffres de la plus grande clé
+
+Lors de chaque passe, on va recopier les *n* valeurs dans les files temporaires *casier\[x]* (*n* affectations), puis les recopier dans le tableau initial. On aura donc 2n opérations élémentaires
+
+Pour **k passes**, la fonction de complexité sera donc  
+**f(n)=2kn**   
+
+Si **k est constant**, notre algorithme est donc linéaire  
+**f ∈ O(n)**
+
+Cet algorithme est plus performant en temps, mais il utilise plus de mémoire que les algorithmes précédents
+
+## Stabilité
+Le fait d’utiliser des files pour stocker les résultats des différentes passes, les valeurs sont traitées dans leur ordre d’apparition dans le tableau initial et pour être stockées dans le tableau temporaire.  Deux valeurs identiques apparaîtrons donc dans le même ordre dans le tableau initial et dans le tableau temporaire. **Dans ce cas, le tri radix est stable**
+
+ > Il existe des implémentations « en place » (sans files ni tableau temporaire) de ce tri, et dans ce cas, deux valeurs identiques pourraient être échangées, le tri par base n’est pas stable pour ces variantes. 
