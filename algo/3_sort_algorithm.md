@@ -277,7 +277,7 @@ Cette méthode peut s’appliquer à des clés non numériques (chaines de carac
 ### Structogramme des fonctions internes
 Le structogramme ci-dessus décrit les opérations nécessaires pour trier le tableau selon le nième chiffre (1 pour l’unité, 2 pour la dizaine, etc...)
 
-![](2021-06-30-11-05-23.png)
+![](images/2021-06-30-11-05-23.png)
 
 Dans ce structogramme:
 - **casier**  
