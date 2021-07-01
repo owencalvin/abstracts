@@ -65,10 +65,10 @@ Un tri externe se fait par l'intermédiaire de fichiers
 Un tri qui n'alloue pas une structure de données supplémentaire afin d'en trier une
 
 ## Qu'est-ce que la stabilité pour un algorithme de tri ?
-Soit deux clé identiques i et j, se trouvent dans notre SCD à l'indice k et m avec k < m.  
-L'algorithme est stable si après le tri i et j se trouve respectivement à l'indice k et k + 1
+Soit deux clé **identiques** *i* et *j*, se trouvent dans notre SCD à l'indice *k* et *m* avec *k < m*.  
+L'algorithme est stable si après le tri *i* et *j* se trouve respectivement à l'indice *k* et *k + 1*
 
-En gros que l'ordre initiale entre deux clés identiques soit le même après le trie
+En gros que l'ordre initiale entre deux clés **identiques** soit le même après le tri
 
 ## En quoi la stabilité est importante
 Si les données d'un tableau sont déjà triées par rapport à une autre clé différente, en utilisant alors un algorithme de tri non stable on va perdre le tri précédemment fait
