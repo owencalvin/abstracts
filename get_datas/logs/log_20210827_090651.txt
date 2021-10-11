@@ -1,0 +1,25 @@
+Start: 2021-08-27 09:06:54
+End: 2021-08-27 09:07:24
+Params: bunker_time=1492  reload_amplitude=28  reload_time=50  reload_repetition=24  reload_stabilization_time=420  tp_id=0  
+Evaluation: 0.8943644626977071
+
+Start: 2021-08-27 09:12:26
+End: 2021-08-27 09:17:26
+Params: bunker_time=1376  reload_amplitude=36  reload_time=37  reload_repetition=14  reload_stabilization_time=250  tp_id=0  
+Evaluation: 64.88888888888889
+
+Start: 2021-08-27 09:22:28
+End: 2021-08-27 09:27:28
+Params: bunker_time=2273  reload_amplitude=45.25  reload_time=44  reload_repetition=14  reload_stabilization_time=647  tp_id=0  
+Evaluation: 63.650190114068444
+
+Start: 2021-08-27 09:32:31
+End: 2021-08-27 09:37:31
+Params: bunker_time=1253  reload_amplitude=49  reload_time=32  reload_repetition=13  reload_stabilization_time=268  tp_id=0  
+Evaluation: 63.56877323420074
+
+Start: 2021-08-27 09:38:45
+End: 2021-08-27 09:39:15
+Params: bunker_time=1322  reload_amplitude=25  reload_time=27  reload_repetition=12  reload_stabilization_time=624  tp_id=0  
+Evaluation: 0.5072833922085063
+

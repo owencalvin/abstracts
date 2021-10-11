@@ -1,0 +1,6 @@
+Start,End,Params,Evaluation
+2021-08-27 09:06:54,2021-08-27 09:07:24,"{'bunker_time': 1492.0, 'reload_amplitude': 28.0, 'reload_time': 50.0, 'reload_repetition': 24.0, 'reload_stabilization_time': 420.0, 'tp_id': 0.0}",0.8943644626977071
+2021-08-27 09:12:26,2021-08-27 09:17:26,"{'bunker_time': 1376.0, 'reload_amplitude': 36.0, 'reload_time': 37.0, 'reload_repetition': 14.0, 'reload_stabilization_time': 250.0, 'tp_id': 0.0}",64.88888888888889
+2021-08-27 09:22:28,2021-08-27 09:27:28,"{'bunker_time': 2273.0, 'reload_amplitude': 45.25, 'reload_time': 44.0, 'reload_repetition': 14.0, 'reload_stabilization_time': 647.0, 'tp_id': 0.0}",63.650190114068444
+2021-08-27 09:32:31,2021-08-27 09:37:31,"{'bunker_time': 1253.0, 'reload_amplitude': 49.0, 'reload_time': 32.0, 'reload_repetition': 13.0, 'reload_stabilization_time': 268.0, 'tp_id': 0.0}",63.56877323420074
+2021-08-27 09:38:45,2021-08-27 09:39:15,"{'bunker_time': 1322.0, 'reload_amplitude': 25.0, 'reload_time': 27.0, 'reload_repetition': 12.0, 'reload_stabilization_time': 624.0, 'tp_id': 0.0}",0.5072833922085063

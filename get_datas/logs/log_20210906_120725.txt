@@ -1,0 +1,60 @@
+Start: 2021-09-06 12:12:27
+End: 2021-09-06 12:17:27
+Params: bunker_time=1211  reload_amplitude=27  reload_time=46  reload_repetition=24  reload_stabilization_time=471  tp_id=0  
+Evaluation: 58.125
+
+Start: 2021-09-06 12:22:30
+End: 2021-09-06 12:27:30
+Params: bunker_time=2031  reload_amplitude=56  reload_time=23  reload_repetition=20  reload_stabilization_time=664  tp_id=0  
+Evaluation: 37.674418604651166
+
+Start: 2021-09-06 12:32:32
+End: 2021-09-06 12:37:32
+Params: bunker_time=1662  reload_amplitude=26  reload_time=48  reload_repetition=20  reload_stabilization_time=387  tp_id=0  
+Evaluation: 63.58565737051792
+
+Start: 2021-09-06 12:44:35
+End: 2021-09-06 12:49:35
+Params: bunker_time=1728  reload_amplitude=49.0  reload_time=43  reload_repetition=20  reload_stabilization_time=266  tp_id=0  
+Evaluation: 63.70370370370371
+
+Start: 2021-09-06 12:54:37
+End: 2021-09-06 12:59:37
+Params: bunker_time=2306  reload_amplitude=38  reload_time=29  reload_repetition=12  reload_stabilization_time=477  tp_id=0  
+Evaluation: 49.11196911196912
+
+Start: 2021-09-06 13:04:40
+End: 2021-09-06 13:09:40
+Params: bunker_time=2400  reload_amplitude=25  reload_time=20  reload_repetition=10  reload_stabilization_time=250  tp_id=0  
+Evaluation: 0
+
+Start: 2021-09-06 13:15:55
+End: 2021-09-06 13:20:55
+Params: bunker_time=1678  reload_amplitude=26  reload_time=48  reload_repetition=20  reload_stabilization_time=386  tp_id=0  
+Evaluation: 62.608695652173914
+
+Start: 2021-09-06 13:25:57
+End: 2021-09-06 13:30:57
+Params: bunker_time=1734  reload_amplitude=26  reload_time=50  reload_repetition=18  reload_stabilization_time=389  tp_id=0  
+Evaluation: 63.10756972111554
+
+Start: 2021-09-06 13:36:00
+End: 2021-09-06 13:41:00
+Params: bunker_time=1203  reload_amplitude=25  reload_time=45  reload_repetition=25  reload_stabilization_time=399  tp_id=0  
+Evaluation: 59.516129032258064
+
+Start: 2021-09-06 13:47:25
+End: 2021-09-06 13:52:25
+Params: bunker_time=2301  reload_amplitude=27  reload_time=50  reload_repetition=15  reload_stabilization_time=385  tp_id=0  
+Evaluation: 66.02409638554217
+
+Start: 2021-09-06 13:57:28
+End: 2021-09-06 14:02:28
+Params: bunker_time=2400  reload_amplitude=26  reload_time=50  reload_repetition=13  reload_stabilization_time=391  tp_id=0  
+Evaluation: 68.23529411764706
+
+Start: 2021-09-06 14:07:30
+End: 2021-09-06 14:12:30
+Params: bunker_time=2400  reload_amplitude=26  reload_time=50  reload_repetition=10  reload_stabilization_time=394  tp_id=0  
+Evaluation: 66.61224489795919
+

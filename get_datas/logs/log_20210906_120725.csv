@@ -1,0 +1,13 @@
+Start,End,Params,Evaluation
+2021-09-06 12:12:27,2021-09-06 12:17:27,"{'bunker_time': 1211.0, 'reload_amplitude': 27.0, 'reload_time': 46.0, 'reload_repetition': 24.0, 'reload_stabilization_time': 471.0, 'tp_id': 0.0}",58.125
+2021-09-06 12:22:30,2021-09-06 12:27:30,"{'bunker_time': 2031.0, 'reload_amplitude': 56.0, 'reload_time': 23.0, 'reload_repetition': 20.0, 'reload_stabilization_time': 664.0, 'tp_id': 0.0}",37.674418604651166
+2021-09-06 12:32:32,2021-09-06 12:37:32,"{'bunker_time': 1662.0, 'reload_amplitude': 26.0, 'reload_time': 48.0, 'reload_repetition': 20.0, 'reload_stabilization_time': 387.0, 'tp_id': 0.0}",63.58565737051792
+2021-09-06 12:44:35,2021-09-06 12:49:35,"{'bunker_time': 1728.0, 'reload_amplitude': 49.0, 'reload_time': 43.0, 'reload_repetition': 20.0, 'reload_stabilization_time': 266.0, 'tp_id': 0.0}",63.70370370370371
+2021-09-06 12:54:37,2021-09-06 12:59:37,"{'bunker_time': 2306.0, 'reload_amplitude': 38.0, 'reload_time': 29.0, 'reload_repetition': 12.0, 'reload_stabilization_time': 477.0, 'tp_id': 0.0}",49.11196911196912
+2021-09-06 13:04:40,2021-09-06 13:09:40,"{'bunker_time': 2400.0, 'reload_amplitude': 25.0, 'reload_time': 20.0, 'reload_repetition': 10.0, 'reload_stabilization_time': 250.0, 'tp_id': 0.0}",0
+2021-09-06 13:15:55,2021-09-06 13:20:55,"{'bunker_time': 1678.0, 'reload_amplitude': 26.0, 'reload_time': 48.0, 'reload_repetition': 20.0, 'reload_stabilization_time': 386.0, 'tp_id': 0.0}",62.608695652173914
+2021-09-06 13:25:57,2021-09-06 13:30:57,"{'bunker_time': 1734.0, 'reload_amplitude': 26.0, 'reload_time': 50.0, 'reload_repetition': 18.0, 'reload_stabilization_time': 389.0, 'tp_id': 0.0}",63.10756972111554
+2021-09-06 13:36:00,2021-09-06 13:41:00,"{'bunker_time': 1203.0, 'reload_amplitude': 25.0, 'reload_time': 45.0, 'reload_repetition': 25.0, 'reload_stabilization_time': 399.0, 'tp_id': 0.0}",59.516129032258064
+2021-09-06 13:47:25,2021-09-06 13:52:25,"{'bunker_time': 2301.0, 'reload_amplitude': 27.0, 'reload_time': 50.0, 'reload_repetition': 15.0, 'reload_stabilization_time': 385.0, 'tp_id': 0.0}",66.02409638554217
+2021-09-06 13:57:28,2021-09-06 14:02:28,"{'bunker_time': 2400.0, 'reload_amplitude': 26.0, 'reload_time': 50.0, 'reload_repetition': 13.0, 'reload_stabilization_time': 391.0, 'tp_id': 0.0}",68.23529411764706
+2021-09-06 14:07:30,2021-09-06 14:12:30,"{'bunker_time': 2400.0, 'reload_amplitude': 26.0, 'reload_time': 50.0, 'reload_repetition': 10.0, 'reload_stabilization_time': 394.0, 'tp_id': 0.0}",66.61224489795919
