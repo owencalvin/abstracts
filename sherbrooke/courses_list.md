@@ -12,7 +12,7 @@
 ## GIF270 Structures de données et complexité
 [https://www.usherbrooke.ca/admission/fiches-cours/GIF270/structures-de-donnees-et-complexite/](https://www.usherbrooke.ca/admission/fiches-cours/GIF270/structures-de-donnees-et-complexite/)  
 
-## GIF360 Probabilités et modélisation de syst.discrets
+## GIF360 Probabilités et modélisation de systèmes discrets
 [https://www.usherbrooke.ca/admission/fiches-cours/GIF360/probabilites-et-modelisation-de-systemes-discrets/](https://www.usherbrooke.ca/admission/fiches-cours/GIF360/probabilites-et-modelisation-de-systemes-discrets/)  
 
 ## GIF362 Mathématiques discrètes IV
