@@ -57,40 +57,50 @@ for l in links:
     title = soup.find("h1").text
     desc = soup.find("h3", text="Cible(s) de formation").find_next("p").text
     content = soup.find("h3", text="Contenu").find_next("p").text
-    dts = [dl.text.strip() for dl in soup.find_all("dt")]
-    dds = [dl.text.strip() for dl in soup.find_all("dd")]
+    cycle = soup.find("dt", text="Cycle").find_next("dd").text
+    credits = soup.find("dt", text="Crédits").find_next("dd").text
+    faculty = soup.find("dt", text="Faculté/Centre").find_next("dd").text
+    charge = soup.find(
+        "dt", text="Répartition de la charge de travail")
 
     desc = re.sub(r"\s+", " ", desc)
     content = re.sub(r"\s+", " ", content)
 
-    html_infos = (
-        title,
-        l,
-        desc,
-        content,
-        *[*dts, *dds][4:7],
-    )
+    html_infos = {
+        "title": title,
+        "link": l,
+        "desc": desc,
+        "content": content,
+        "cycle": cycle,
+        "credits": credits,
+        "faculty": faculty,
+    }
+
+    if charge:
+        html_infos['charge'] = charge.find_next("dd").text
 
     infos.append(html_infos)
     print(html_infos)
 
-str_infos = ""
+str_infos = "# Détails des cours  \n\n"
 for i in infos:
-    str_infos += f"# {i[0]}  \n"
-    str_infos += f"## Lien  \n"
-    str_infos += f"[{i[1]}]({i[1]})  \n"
-    str_infos += f"## Cible(s) de formation  \n"
-    str_infos += f"{i[2]}  \n"
-    str_infos += f"## Contenu  \n"
-    str_infos += f"{i[3]}  \n"
-    str_infos += f"## Crédit  \n"
-    str_infos += f"{i[4]}  \n"
-    str_infos += f"## Faculté  \n"
-    str_infos += f"{i[5]}  \n"
+    str_infos += f"## {i['title']}  \n"
+    str_infos += f"### Lien  \n"
+    str_infos += f"[{i['link']}]({i['link']})  \n"
+    str_infos += f"### Cible(s) de formation  \n"
+    str_infos += f"{i['desc']}  \n"
+    str_infos += f"### Contenu  \n"
+    str_infos += f"{i['content']}  \n"
+    str_infos += f"### Cycle  \n"
+    str_infos += f"{i['cycle']}  \n"
+    str_infos += f"### Crédits  \n"
+    str_infos += f"{i['credits']}  \n"
+    str_infos += f"### Faculté  \n"
+    str_infos += f"{i['faculty']}  \n"
 
-    if len(i) - 1 > 5:
-        str_infos += f"## Répartition de la charge de travail  \n"
-        str_infos += f"{i[4]}  \n"
+    if "charge" in i:
+        str_infos += f"### Répartition de la charge de travail  \n"
+        str_infos += f"{i['charge']}  \n"
 
     str_infos += f"  \n\n"
 
