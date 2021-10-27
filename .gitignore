@@ -1,8 +1,9 @@
 .DS_Store
 
-latex/*/*.aux
-latex/*/*.fls
-latex/*/*.log
-latex/*/*.pdf
-latex/*/*.gz
-latex/*/*.fdb_latexmk
+**/*.aux
+**/*.fls
+**/*.log
+**/*.gz
+**/*.fdb_latexmk
+**/*.toc
+**/*.out
