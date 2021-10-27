@@ -1,3 +1,6 @@
+# Liste des cours
+https://www.ulaval.ca/etudes/cours?matieres[147]=147&matieres[175]=175&matieres[87]=87&matieres[76]=76&matieres[83]=83&matieres[4]=4&facultes[1469]=1469&departements[1676]=1676&departements[1532]=1532&departements[1640]=1640&departements[1760]=1760&day=All&start=All&end=All&field_sections_course_nbcred_min=All&field_sections_course_nbcred_max=All
+
 ## IFT-2003 - Intelligence artificielle I
 https://www.ulaval.ca/etudes/cours/ift-2003-intelligence-artificielle-i
 
