@@ -99,3 +99,51 @@ https://www.ulaval.ca/etudes/cours/stt-1100-introduction-aux-principaux-logiciel
 
 ### Description
 Ce cours initie l'étudiant aux logiciels R et SAS, de sorte qu’il puisse réaliser des analyses exploratoires de jeux de données. L'étudiant y apprend à concevoir et à exécuter des programmes R et SAS permettant de saisir, de lire, d’importer et de manipuler des données, de calculer des statistiques descriptives unidimensionnelles et multidimensionnelles, de produire des graphiques, de simuler des variables aléatoires et d’inclure adéquatement des sorties statistiques dans un rapport.
+
+
+## MAT-1910 - Mathématiques de l'ingénieur I
+https://www.ulaval.ca/etudes/cours/mat-1900-mathematiques-de-lingenieur-i
+
+### Crédits
+3 crédits
+
+### Description
+Calcul différentiel des fonctions de plusieurs variables : théorie et applications. Nombres complexes; polynômes. Équations différentielles du premier ordre et du premier degré; méthodes numériques. Équations différentielles du second ordre de types spéciaux. Équations différentielles linéaires d'ordre n à coefficients constants. Systèmes d'équations différentielles. Applications.
+
+## MAT-1910 - Mathématiques de l'ingénieur II
+https://www.ulaval.ca/etudes/cours/mat-1910-mathematiques-de-lingenieur-ii
+
+### Crédits
+3 crédits
+
+### Description
+Intégrales simples, calcul formel et numérique. Intégrales multiples, coordonnées curvilignes, applications. Calcul des champs de vecteurs. Intégrales sur les courbes et les surfaces : applications, circulation, travail, flux. Théorèmes fondamentaux : Stokes, Gauss; applications à la physique.
+
+
+## MAT-1919 - Mathématiques pour informaticien
+https://www.ulaval.ca/etudes/cours/mat-1919-mathematiques-pour-informaticien
+
+### Crédits
+3 crédits
+
+### Description
+Ensembles, relations, récurrences, arbres et graphes. Théorie des ensembles finis et infinis, notions de fonctions, séries génératrices et résolutions de récurrences, principes de dénombrement et analyse combinatoire, éléments de théorie des graphes et des arbres. Notions de démonstrations mathématiques, notamment les démonstrations par induction et par l'absurde. Rappels sur les limites, les intégrales, les suites, les séries et les résolutions de systèmes linéaires.
+
+
+## STT-4230 - R pour scientifique
+https://www.ulaval.ca/etudes/cours/stt-4230-r-pour-scientifique
+
+### Crédits
+3
+
+### Description
+Ce cours a pour objectif d'amener l'étudiant à une maîtrise avancée de R, de sorte qu'il puisse utiliser ce langage pour programmer et implanter de nouvelles méthodes de calcul d'une manière efficiente et réutilisable. L'étudiant apprend à : comprendre ce que fait un programme R donné, faire ses propres programmes R (y compris des énoncés conditionnels, des boucles si nécessaire, des calculs vectoriels), créer des fonctions R et savoir les documenter, déboguer un programme R et l'optimiser en termes de temps de calcul. Note : L'étudiant doit avoir une connaissance minimale de R pour s’inscrire à ce cours.
+
+
+## STT-4600 - Échantillonnage
+
+### Crédits
+3
+
+### Description
+Ce cours a pour objectif d'amener l'étudiant à une maîtrise avancée de R, de sorte qu'il puisse utiliser ce langage pour programmer et implanter de nouvelles méthodes de calcul d'une manière efficiente et réutilisable. L'étudiant apprend à : comprendre ce que fait un programme R donné, faire ses propres programmes R (y compris des énoncés conditionnels, des boucles si nécessaire, des calculs vectoriels), créer des fonctions R et savoir les documenter, déboguer un programme R et l'optimiser en termes de temps de calcul. Note : L'étudiant doit avoir une connaissance minimale de R pour s’inscrire à ce cours.
