@@ -147,3 +147,21 @@ Ce cours a pour objectif d'amener l'étudiant à une maîtrise avancée de R, de
 
 ### Description
 Ce cours a pour objectif d'amener l'étudiant à une maîtrise avancée de R, de sorte qu'il puisse utiliser ce langage pour programmer et implanter de nouvelles méthodes de calcul d'une manière efficiente et réutilisable. L'étudiant apprend à : comprendre ce que fait un programme R donné, faire ses propres programmes R (y compris des énoncés conditionnels, des boucles si nécessaire, des calculs vectoriels), créer des fonctions R et savoir les documenter, déboguer un programme R et l'optimiser en termes de temps de calcul. Note : L'étudiant doit avoir une connaissance minimale de R pour s’inscrire à ce cours.
+
+## GLO-4027 - Analyse et traitement de données massives
+https://www.ulaval.ca/etudes/cours/glo-4027-analyse-et-traitement-de-donnees-massives
+
+### Crédits
+3 crédits
+
+### Description
+Description des défis du traitement de données massives (big data). Prétraitement des données. Recherche de relations fréquentes. Algorithmes d'apprentissage supervisé et non supervisé pour données massives. Algorithmes de traitement des flux de données. Algorithmes de traitement de données sur internet : recherche d'information et systèmes de recommandation. Anonymisation des données et vie privée. Études de cas d'utilisation des données massives dans la pratique.
+
+## MQT-2101 - Analyse et modélisation des données
+https://www.ulaval.ca/etudes/cours/mqt-2101-analyse-et-modelisation-des-donnees
+
+### Crédits
+3 crédits
+
+### Description
+Présentation de différentes méthodes de prévision à court ou moyen terme (moyenne mobile, régression, ARIMA, etc.) utilisées en appui à la prise de décision. Visualisation et traitement des données statistiques à l'aide d'outils logiciels tels que le langage R. Aspects pratiques de la modélisation pour l'analyse des données et la prévision. Les concepts théoriques sont illustrés par des exemples concrets.
