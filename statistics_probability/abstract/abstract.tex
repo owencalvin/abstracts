@@ -6,11 +6,15 @@
 \usepackage{subfiles}
 \usepackage[parfill]{parskip}
 \usepackage{amsmath}
+\usepackage{titlesec}
 
 % Set the font family to sans-serif
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\contentsname}{Table des matieres}
 \renewcommand{\chaptername}{Chapitre}
+\newcommand{\paragraphb}[1]{\paragraph{#1}\mbox{}\\}
+\titleformat{\chapter}[display] {\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
+\titlespacing{\chapter}{0cm}{0cm}{0.5cm}
 
 \graphicspath{ {images/} }
 
@@ -23,5 +27,6 @@
 \tableofcontents{}
 
 \subfile{sections/vocabulary}
+\subfile{sections/enumeration}
 
 \end{document}

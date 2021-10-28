@@ -1,0 +1,72 @@
+\chapter{Dénombrement}
+Le dénombrement est le principe de compter un nombre d'objets \\ \\
+
+\section{Notation}
+\subsection{Ensemble / Sous-ensemble}
+Si on ne prend \emph{pas} en compte l'ordre de plusieurs éléments on les met entre \emph{accolades}, c'est un ensemble \\ \\
+$\{a, b, c\} \subset E$
+
+\subsection{Liste ordonnée}
+Si on prend en compte l'ordre de plusieurs éléments on les met entre \emph{parenthèses} $(a, b, c)$ et on appelle ça une \emph{liste ordonnée d'éléments}. \\
+Cette liste résulte du produit cartésiens d'ensembles $E_1 \times E_2 \times \dots \times E_n$
+\paragraphb{Exemple}
+$A = \{a, b, c\}$ et $B = \{0, 1, 2\}$ \\
+$A \times B = \{(a, 0), (a, 1), (a, 2), (b, 0), (b, 1), (b, 2), (c, 0), (c, 1), (c, 2)\}.$
+
+\pagebreak
+
+\section{p-uplets}
+\paragraphb{Exemple: Tirages successifs \emph{avec} remise}
+$E$ est notre ensemble contenant tous nos résultats possibles
+
+\begin{itemize}
+  \item On pioche un premier jeton: $b$ et on le remet dans le sac
+  \item On pioche un deuxième jeton: $a$ et on le remet dans le sac
+  \item On pioche un troisième jeton: $a$ et on le remet dans le sac \\
+\end{itemize}
+
+On peut alors représenter ce résultat par $(b, a, a)$ \\ \\
+\textbf{Les résultats possibles de cette expérience sont des listes de 3 éléments de $E$,
+\emph{avec} répétition d’éléments possible.}
+
+\paragraphb{Attention} on respecte l'ordre $(a, b, c) \neq (c, b, a)$
+
+\pagebreak
+
+\section{Arrangements}
+\paragraphb{Exemple: Tirages successifs \emph{sans} remise}
+$E$ est notre ensemble contenant tous nos résultats possibles
+
+\begin{itemize}
+  \item On pioche un premier jeton: $b$ que l’on ne remet \textbf{pas} dans le sac
+  \item On pioche un deuxième jeton: $a$ que l’on ne remet \textbf{pas} dans le sac
+  \item On pioche un troisième jeton: $c$ que l’on ne remet \textbf{pas} dans le sac
+\end{itemize}
+
+On peut alors représenter ce résultat par $(b, a, c)$ \\ \\
+\textbf{Les résultats possibles de cette expérience sont des listes de 3 éléments de $E$, 
+\emph{sans} répétition d’éléments possible.}
+
+\paragraph{En résumé}
+\begin{itemize}
+  \item Une liste de $3$ éléments sans répétition possible est appelée un arrangement de $3$ éléments
+  \item Plus généralement, une liste de $p$ éléments sans répétition possible est appelée un \emph{arrangement de $p$ éléments de $E$} 
+\end{itemize}
+
+\pagebreak
+
+\section{Combinaisons}
+\paragraphb{Exemple: Tirages \emph{simultanés}}
+$E$ est notre ensemble contenant tous nos résultats possibles
+
+\begin{itemize}
+  \item On $3$ trois jetons en une seule fois: $a$, $d$ et $c$
+\end{itemize}
+
+On peut alors représenter le résultat entre accolades car on ne prend par en compte l'odre d'arrivé des jetons: \\ $\{ a, d, c \}$ \\ \\
+\textbf{Les résultats possibles de cette expérience sont un sous-ensemble de 3 éléments de $E$, on appelle ça une combinaison de $E$} \\
+$\{a, d, c\} \subset E$
+
+\pagebreak
+
+\section{Permutations}
