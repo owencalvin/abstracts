@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  cpp:
+    image: cpp
+    # build: .
+    # environment:
+    #   - ENV_VAR: "hello"
+    # env_file:
+    #   - var.env
+    networks:
+      - mongo-net
+  cpp-db:
+    image: mongo
+    volumes:
+      - mongo-volume:/data/db
+    ports:
+      - ${MONGO_PORT}:${MONGO_PORT}
+    networks:
+      - mongo-net
+
+volumes:
+  mongo-volume:
+
+networks:
+  mongo-net:

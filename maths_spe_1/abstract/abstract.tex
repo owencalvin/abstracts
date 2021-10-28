@@ -1,0 +1,27 @@
+\documentclass[french,a4paper,11pt]{report}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{tgadventor}
+\usepackage{subfiles}
+\usepackage[parfill]{parskip}
+\usepackage{amsmath}
+
+% Set the font family to sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\contentsname}{Table des matieres}
+\renewcommand{\chaptername}{Chapitre}
+
+\graphicspath{ {images/} }
+
+\title{Mathématiques spécifiques I}
+\author{Owen Gombas}
+\date{2021 - 2022}
+
+\begin{document}
+\maketitle
+\tableofcontents{}
+
+\subfile{sections/huffman}
+
+\end{document}
