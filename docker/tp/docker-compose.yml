@@ -1,26 +1,35 @@
 version: "3.9"
 
 services:
-  cpp:
-    image: cpp
-    # build: .
-    # environment:
-    #   - ENV_VAR: "hello"
-    # env_file:
-    #   - var.env
+  front:
+    image: tp-front
     networks:
+      - back-front-net
+    ports:
+      - 80:80
+  back:
+    image: tp-back
+    environment:
+      - MONGODB_CONNECTION_URL=mongodb://mongo:27017/pizzas
+    ports:
+      - 8080:8080
+    networks:
+      - back-front-net
       - mongo-net
-  db:
+  mongo:
     image: mongo
     volumes:
       - mongo-volume:/data/db
-    ports:
-      - ${MONGO_PORT}:${MONGO_PORT}
     networks:
       - mongo-net
+    ports:
+      - 27017:27017
 
 volumes:
   mongo-volume:
 
 networks:
   mongo-net:
+    driver: bridge
+  back-front-net:
+    driver: bridge
