@@ -3,6 +3,8 @@ version: "3.9"
 services:
   front:
     image: tp-front
+    environment:
+      - NODE_ENV=production
     networks:
       - back-front-net
     ports:
@@ -10,6 +12,7 @@ services:
   back:
     image: tp-back
     environment:
+      - NODE_ENV=production
       - MONGODB_CONNECTION_URL=mongodb://mongo:27017/pizzas
     ports:
       - 8080:8080
