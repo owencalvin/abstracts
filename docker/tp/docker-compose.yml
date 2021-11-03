@@ -30,6 +30,4 @@ volumes:
 
 networks:
   mongo-net:
-    driver: bridge
   back-front-net:
-    driver: bridge
