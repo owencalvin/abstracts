@@ -1,9 +1,9 @@
-FROM node AS build
+FROM node:lts-alpine AS build
 COPY . .
-run npm i
-run npm run build
+RUN npm i
+RUN npm run build
 
-FROM node AS runtime
+FROM node:lts-alpine AS runtime
 COPY --from=build ./node_modules ./node_modules
 COPY --from=build ./*.js .
 CMD node server.js
