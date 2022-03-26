@@ -1,0 +1,4 @@
+/home/owen/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/owen/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/ninja/linux/ninja -G Ninja /home/owen/CLionProjects/graph
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/owen/CLionProjects/graph/cmake-build-debug
