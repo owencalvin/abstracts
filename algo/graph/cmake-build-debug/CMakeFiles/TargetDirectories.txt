@@ -1,3 +1,3 @@
-/home/owen/CLionProjects/graph/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/owen/CLionProjects/graph/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/owen/CLionProjects/graph/cmake-build-debug/CMakeFiles/graph.dir
+D:/Users/oweng/Documents/abstracts/algo/graph/cmake-build-debug/CMakeFiles/graph.dir
+D:/Users/oweng/Documents/abstracts/algo/graph/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Users/oweng/Documents/abstracts/algo/graph/cmake-build-debug/CMakeFiles/rebuild_cache.dir

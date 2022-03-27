@@ -1,4 +1,4 @@
-/home/owen/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/owen/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/ninja/linux/ninja -G Ninja /home/owen/CLionProjects/graph
+C:\Users\oweng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Users\oweng\Documents\abstracts\algo\graph
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/owen/CLionProjects/graph/cmake-build-debug
+-- Build files have been written to: D:/Users/oweng/Documents/abstracts/algo/graph/cmake-build-debug
