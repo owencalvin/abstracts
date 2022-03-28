@@ -21,7 +21,7 @@ public:
 
     const pair<int, int>* back();
 
-    const pair<int, int>* insert(int value, int priority);
+    const pair<int, int>* insert(int priority, int value);
 
     const pair<int, int>* minimum();
 

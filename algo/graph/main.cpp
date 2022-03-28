@@ -38,22 +38,25 @@ int main() {
     g.iterativeBreadthFirstSearch(printVertex);
 
     cout << endl << "Iterative priority first (=== depth first): ";
-    g.iterativePriorityFirstSearch(printVertex, 1);
+    g.iterativePriorityFirstSearch(printVertex, -1);
 
     cout << endl << "Iterative priority first (=== breadth first): ";
-    g.iterativePriorityFirstSearch(printVertex, -1);
+    g.iterativePriorityFirstSearch(printVertex, 1);
 
     MinHeap mh;
 
-    mh.insert(100, 3);
-    mh.insert(200, 2);
-    mh.insert(50, 1);
+
+    mh.insert(3, 100);
+    mh.insert(4, 20);
+    mh.insert(2, 200);
+    mh.insert(1, 50);
 
     cout << endl;
     cout << "Extraction: ";
-    cout << mh.extractMinimum().first;
-    cout << mh.extractMinimum().first;
-    cout << mh.extractMinimum().first;
+    cout << mh.extractMinimum().second << " ";
+    cout << mh.extractMinimum().second << " ";
+    cout << mh.extractMinimum().second << " ";
+    cout << mh.extractMinimum().second << " ";
 
     return 0;
 }

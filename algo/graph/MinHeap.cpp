@@ -3,6 +3,7 @@
 //
 
 #include <climits>
+#include <iostream>
 #include "MinHeap.h"
 #include "Utils.h"
 
@@ -11,7 +12,7 @@ MinHeap::MinHeap() {
 }
 
 const pair<int, int> *MinHeap::insert(int priority, int value) {
-    this->heap.push_back(make_pair(priority, value));
+    this->heap.push_back(make_pair(INT_MAX, value));
     this->decreasePriority(this->heap.size() - 1, priority);
     return &this->heap.back();
 }
@@ -43,24 +44,29 @@ const pair<int, int> *MinHeap::decreasePriority(int index, int newPriority) {
         return nullptr;
     }
 
-    while (index > 1 && this->heap[index / 2] > this->heap[index]) {
+    this->heap[index].first = newPriority;
+    while (index > 1 && this->heap[index / 2].first > this->heap[index].first) {
         Utils::swap(this->heap[index], this->heap[index / 2]);
         index /= 2;
     }
 }
 
 void MinHeap::siftUp() {
-    int index = 0;
+    unsigned int index = 1;
     bool done = false;
 
-    while (index * 2 <= this->heap.size() && !done) {
-        int maxChildIndex = index * 2;
+    while (index * 2 < this->heap.size() && !done) {
+        const unsigned int firstChildIndex = index * 2;
+        const unsigned int secondChildIndex = firstChildIndex + 1;
+        unsigned int maxChildIndex = firstChildIndex;
 
-        if (maxChildIndex + 1 < this->heap.size()) {
-            maxChildIndex++;
+        if (secondChildIndex < this->heap.size()) {
+            if (this->heap[secondChildIndex].first < this->heap[firstChildIndex].first) {
+                maxChildIndex = secondChildIndex;
+            }
         }
 
-        if (this->heap[maxChildIndex] < this->heap[index]) {
+        if (this->heap[maxChildIndex].first < this->heap[index].first) {
             Utils::swap(this->heap[maxChildIndex], this->heap[index]);
             index = maxChildIndex;
         } else {
