@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Graph.h"
+#include "MinHeap.h"
+#include "Utils.h"
 
 using namespace std;
 
@@ -40,6 +42,18 @@ int main() {
 
     cout << endl << "Iterative priority first (=== breadth first): ";
     g.iterativePriorityFirstSearch(printVertex, -1);
+
+    MinHeap mh;
+
+    mh.insert(100, 3);
+    mh.insert(200, 2);
+    mh.insert(50, 1);
+
+    cout << endl;
+    cout << "Extraction: ";
+    cout << mh.extractMinimum().first;
+    cout << mh.extractMinimum().first;
+    cout << mh.extractMinimum().first;
 
     return 0;
 }

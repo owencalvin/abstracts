@@ -9,6 +9,7 @@
 #include <stack>
 #include <queue>
 #include "Graph.h"
+#include "MinHeap.h"
 
 using namespace std;
 
@@ -115,6 +116,8 @@ bool Graph::isDirected() {
     return false;
 }
 
+// region recursive depth-first search
+
 void Graph::recursiveDepthFirstSearch() {
     this->recursiveDepthFirstSearch(nullptr);
 }
@@ -146,6 +149,10 @@ void Graph::recursiveDepthFirstVertexVisit(int vertex, bool *visited, void (*f)(
         }
     }
 }
+
+// endregion
+
+// region iterative depth-first search
 
 void Graph::iterativeDepthFirstSearch() {
     this->iterativeDepthFirstSearch(nullptr);
@@ -192,6 +199,10 @@ void Graph::iterativeDepthFirstVertexVisit(int vertex, bool *visited, bool *met,
     }
 }
 
+// endregion
+
+// region iterative breadth-first search
+
 void Graph::iterativeBreadthFirstSearch() {
     this->iterativeDepthFirstSearch(nullptr);
 }
@@ -237,6 +248,10 @@ void Graph::iterativeBreadthFirstVertexVisit(int vertex, bool *visited, bool *me
     }
 }
 
+// endregion
+
+// region iterative priority-first search
+
 void Graph::iterativePriorityFirstSearch(int priority) {
     this->iterativePriorityFirstSearch(nullptr);
 }
@@ -259,14 +274,19 @@ void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *m
         return;
     }
 
-    priority_queue<pair<int, int>> q;
+    // priority_queue<pair<int, int>> q;
+    MinHeap mh;
+
     met[vertex] = true;
     *priorityBase += priority;
-    q.push(make_pair(*priorityBase, vertex));
+    // q.push(make_pair(*priorityBase, vertex));
+    mh.insert(*priorityBase, vertex);
 
-    while (!q.empty()) {
-        vertex = q.top().second;
-        q.pop();
+    // while (!q.empty()) {
+    while (!mh.empty()) {
+        // vertex = q.top().second;
+        vertex = mh.extractMinimum().second;
+        // q.pop();
         visited[vertex] = true;
 
         if (f != nullptr) {
@@ -278,9 +298,12 @@ void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *m
                 if (!visited[i] && !met[i]) {
                     met[i] = true;
                     *priorityBase += priority;
-                    q.push(make_pair(*priorityBase, i));
+                    // q.push(make_pair(*priorityBase, i));
+                    mh.insert(*priorityBase, i);
                 }
             }
         }
     }
 }
+
+// endregion

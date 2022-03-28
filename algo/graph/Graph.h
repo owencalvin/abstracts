@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include "Vertex.h"
-
 using namespace std;
 
 class Graph {
