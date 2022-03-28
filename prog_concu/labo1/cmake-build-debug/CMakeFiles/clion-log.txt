@@ -1,0 +1,4 @@
+C:\Users\oweng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/oweng/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/ninja/win/ninja.exe -G Ninja D:\Users\oweng\Documents\dev\c\prog_concu\labo1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Users/oweng/Documents/dev/c/prog_concu/labo1/cmake-build-debug
