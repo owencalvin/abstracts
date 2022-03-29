@@ -2,13 +2,12 @@
 // Created by owen on 21/02/2022.
 //
 
-#include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
 #include <stack>
 #include <queue>
 #include "Graph.h"
+#include "Utils.h"
 #include "MinHeap.h"
 
 using namespace std;
@@ -32,43 +31,13 @@ Graph::~Graph() {
     }
 }
 
-bool *Graph::getFalseVertexArray() {
-    bool *arr = new bool[this->size];
-
-    for (int i = 0; i < this->size; ++i) {
-        arr[i] = false;
-    }
-
-    return arr;
+string Graph::toString() const {
+    return Utils::matrixToString(this->matrix, this->size);
 }
 
-string Graph::toString() {
-    stringstream ss;
-
-    ss << std::endl << "     ";
-
-    for (int i = 0; i < this->size; ++i) {
-        ss << i << "  ";
-    }
-
-    ss << std::endl << "   --";
-
-    for (int i = 0; i < this->size; ++i) {
-        ss << "---";
-    }
-
-    ss << std::endl;
-
-    for (int i = 0; i < this->size; ++i) {
-        ss << i << " |  ";
-
-        for (int j = 0; j < this->size; ++j) {
-            ss << matrix[i][j] << "  ";
-        }
-        ss << std::endl;
-    }
-
-    return ss.str();
+ostream &operator<<(ostream &os, const Graph &graph) {
+    os << graph.toString();
+    return os;
 }
 
 void Graph::addArc(int i, int j, int p) {
@@ -80,7 +49,7 @@ void Graph::addOrientedGraph(int i, int j, int p) {
     this->matrix[i][j] = p;
 }
 
-int Graph::degree(int i) {
+int Graph::degree(int i) const {
     int deg = 0;
 
     for (int j = 0; j < this->size; ++j) {
@@ -92,7 +61,7 @@ int Graph::degree(int i) {
     return deg;
 }
 
-bool Graph::isWeighted() {
+bool Graph::isWeighted() const {
     for (int i = 0; i < this->size; ++i) {
         for (int j = 0; j < this->size; ++j) {
             if (abs(this->matrix[i][j]) > 1) {
@@ -104,7 +73,7 @@ bool Graph::isWeighted() {
     return false;
 }
 
-bool Graph::isDirected() {
+bool Graph::isDirected() const {
     for (int i = 0; i < this->size; ++i) {
         for (int j = 0; j < this->size; ++j) {
             if (this->matrix[i][j] != this->matrix[j][i]) {
@@ -116,6 +85,10 @@ bool Graph::isDirected() {
     return false;
 }
 
+bool Graph::isConnected() const {
+    return false;
+}
+
 // region recursive depth-first search
 
 void Graph::recursiveDepthFirstSearch() {
@@ -123,7 +96,7 @@ void Graph::recursiveDepthFirstSearch() {
 }
 
 void Graph::recursiveDepthFirstSearch(void (*f)(int)) {
-    bool *visited = this->getFalseVertexArray();
+    bool *visited = Utils::initArray<bool>(false, this->size);
 
     for (int i = 0; i < this->size; ++i) {
         this->recursiveDepthFirstVertexVisit(i, visited, f);
@@ -159,8 +132,8 @@ void Graph::iterativeDepthFirstSearch() {
 }
 
 void Graph::iterativeDepthFirstSearch(void (*f)(int)) {
-    bool *visited = this->getFalseVertexArray();
-    bool *met = this->getFalseVertexArray();
+    bool *visited = Utils::initArray(false, this->size);
+    bool *met = Utils::initArray(false, this->size);
 
     for (int i = 0; i < this->size; ++i) {
         this->iterativeDepthFirstVertexVisit(i, visited, met, f);
@@ -208,8 +181,8 @@ void Graph::iterativeBreadthFirstSearch() {
 }
 
 void Graph::iterativeBreadthFirstSearch(void (*f)(int)) {
-    bool *visited = this->getFalseVertexArray();
-    bool *met = this->getFalseVertexArray();
+    bool *visited = Utils::initArray(false, this->size);
+    bool *met = Utils::initArray(false, this->size);
 
     for (int i = 0; i < this->size; ++i) {
         this->iterativeBreadthFirstVertexVisit(i, visited, met, f);
@@ -257,8 +230,8 @@ void Graph::iterativePriorityFirstSearch(int priority) {
 }
 
 void Graph::iterativePriorityFirstSearch(void (*f)(int), int priority) {
-    bool *visited = this->getFalseVertexArray();
-    bool *met = this->getFalseVertexArray();
+    bool *visited = Utils::initArray(false, this->size);
+    bool *met = Utils::initArray(false, this->size);
     int *priorityBase = new int(0);
 
     for (int i = 0; i < this->size; ++i) {
@@ -300,6 +273,93 @@ void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *m
                     *priorityBase += priority;
                     // q.push(make_pair(*priorityBase, i));
                     mh.insert(*priorityBase, i);
+                }
+            }
+        }
+    }
+}
+
+// endregion
+
+// region Prim
+
+void Graph::prim() {
+    this->prim(nullptr);
+}
+
+void Graph::prim(void (*f)(int)) {
+    bool *visited = Utils::initArray(false, this->size);
+
+    for (int i = 0; i < this->size; ++i) {
+        this->primVertexVisit(i, visited, f);
+    }
+}
+
+void Graph::primVertexVisit(int vertex, bool *visited, void (*f)(int)) {
+    if (visited[vertex]) {
+        return;
+    }
+
+    MinHeap mh;
+    mh.insert(INT_MAX, vertex);
+
+    while (!mh.empty()) {
+        vertex = mh.extractMinimum().second;
+        visited[vertex] = true;
+
+        if (f != nullptr) {
+            f(vertex);
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (this->matrix[vertex][i] != 0) {
+                if (!visited[i]) {
+                    int priority = this->matrix[vertex][i];
+                    mh.insert(priority, i);
+                }
+            }
+        }
+    }
+}
+
+// endregion
+
+// region Dijkstra
+
+void Graph::dijkstra() {
+    this->dijkstra(nullptr);
+}
+
+void Graph::dijkstra(void (*f)(int)) {
+    bool *visited = Utils::initArray<bool>(false, this->size);
+
+    dijkstraVertexVisit(0, visited, f);
+}
+
+void Graph::dijkstraVertexVisit(int vertex, bool *visited, void (*f)(int)) {
+    if (visited[vertex]) {
+        return;
+    }
+
+    MinHeap mh;
+    mh.insert(0, vertex);
+
+    while (!mh.empty()) {
+        pair<int, int> priority_vertex = mh.extractMinimum();
+        int current_vertex_priority = mh.extractMinimum().first;
+        vertex = priority_vertex.second;
+
+        visited[vertex] = true;
+
+        if (f != nullptr) {
+            f(vertex);
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (this->matrix[vertex][i] != 0) {
+                if (!visited[i]) {
+                    int priority = current_vertex_priority + this->matrix[vertex][i];
+                    mh.insert(priority, i);
                 }
             }
         }

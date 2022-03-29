@@ -15,7 +15,7 @@ private:
 public:
     MinHeap();
 
-    const bool empty();
+    bool empty();
 
     const pair<int, int>* top();
 
@@ -25,9 +25,9 @@ public:
 
     const pair<int, int>* minimum();
 
-    const pair<int, int> extractMinimum();
+    pair<int, int> extractMinimum();
 
-    const pair<int, int>* decreasePriority(int index, int newPriority);
+    void decreasePriority(int index, int newPriority);
 
     void siftUp();
 };

@@ -3,16 +3,15 @@
 //
 
 #include <climits>
-#include <iostream>
 #include "MinHeap.h"
 #include "Utils.h"
 
 MinHeap::MinHeap() {
-    this->heap.push_back(make_pair(INT_MIN, INT_MIN));
+    this->heap.emplace_back(INT_MIN, INT_MIN);
 }
 
 const pair<int, int> *MinHeap::insert(int priority, int value) {
-    this->heap.push_back(make_pair(INT_MAX, value));
+    this->heap.emplace_back(INT_MAX, value);
     this->decreasePriority(this->heap.size() - 1, priority);
     return &this->heap.back();
 }
@@ -21,9 +20,9 @@ const pair<int, int> *MinHeap::minimum() {
     return &this->heap[1];
 }
 
-const pair<int, int> MinHeap::extractMinimum() {
+pair<int, int> MinHeap::extractMinimum() {
     if (this->heap.empty()) {
-        return make_pair(INT_MIN, INT_MIN);
+        return this->heap[0];
     }
 
     auto min = this->heap[1];
@@ -35,14 +34,8 @@ const pair<int, int> MinHeap::extractMinimum() {
     return min;
 }
 
-const pair<int, int> *MinHeap::decreasePriority(int index, int newPriority) {
-    if (index < 0) {
-        return nullptr;
-    }
-
-    if (newPriority > this->heap[index].first) {
-        return nullptr;
-    }
+void MinHeap::decreasePriority(int index, int newPriority) {
+    if (newPriority > this->heap[index].first) {}
 
     this->heap[index].first = newPriority;
     while (index > 1 && this->heap[index / 2].first > this->heap[index].first) {
@@ -75,7 +68,7 @@ void MinHeap::siftUp() {
     }
 }
 
-const bool MinHeap::empty() {
+bool MinHeap::empty() {
     return this->heap.size() <= 1;
 }
 

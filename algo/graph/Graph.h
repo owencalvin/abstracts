@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <ostream>
+
 using namespace std;
 
 class Graph {
@@ -20,26 +22,30 @@ private:
     void iterativePriorityFirstVertexVisit(int vertex, bool visited[], bool met[], void (*f)(int), int *priorityBase,
                                            int priority);
 
-    bool *getFalseVertexArray();
+    void primVertexVisit(int vertex, bool visited[], void (*f)(int));
+
+    void dijkstraVertexVisit(int vertex, bool visited[], void (*f)(int));
 
 public:
     ~Graph();
 
-    Graph(int size);
+    explicit Graph(int size);
 
-    string toString();
+    string toString() const;
+
+    friend ostream &operator<<(ostream &os, const Graph &graph);
 
     void addArc(int i, int j, int p = 1);
 
     void addOrientedGraph(int i, int j, int p = 1);
 
-    int degree(int i);
+    int degree(int i) const;
 
-    bool isConnected();
+    bool isConnected() const;
 
-    bool isDirected();
+    bool isDirected() const;
 
-    bool isWeighted();
+    bool isWeighted() const;
 
     /**
      * Recursive implementation of the depth first search in a graph
@@ -77,15 +83,37 @@ public:
     /**
      * Iterative generic implementation to search in a graph, based on priority
      * A generic implementation of breadth first and depth first search
-     * @param priority 1 for depth first search and -1 for breadth first search
+     * @param priority -1 for depth first search and 1 for breadth first search
      */
-    void iterativePriorityFirstSearch(int priority = 1);
+    void iterativePriorityFirstSearch(int priority = -1);
 
     /**
      * Iterative generic implementation to search in a graph, based on priority
      * A generic implementation of breadth first search and depth first search
      * @param f The function that operate on the vertex (example: printing the vertex)
-     * @param priority 1 for depth first search and -1 for breadth first search
+     * @param priority -1 for depth first search and 1 for breadth first search
      */
-    void iterativePriorityFirstSearch(void (*f)(int), int priority = 1);
+    void iterativePriorityFirstSearch(void (*f)(int), int priority = -1);
+
+    /**
+     * Prim tree algorithm
+     */
+    void prim();
+
+    /**
+     * Prim tree algorithm
+     * @param f The function that operate on the vertex (example: printing the vertex)
+     */
+    void prim(void (*f)(int));
+
+    /**
+     * Dijkstra tree algorithm
+     */
+    void dijkstra();
+
+    /**
+     * Dijkstra tree algorithm
+     * @param f The function that operate on the vertex (example: printing the vertex)
+     */
+    void dijkstra(void (*f)(int));
 };
