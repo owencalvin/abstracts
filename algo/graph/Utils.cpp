@@ -2,6 +2,7 @@
 // Created by owen on 28/03/2022.
 //
 
+#include <sstream>
 #include "Utils.h"
 
 string Utils::matrixToString(int **matrix, int size) {

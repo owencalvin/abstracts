@@ -71,11 +71,3 @@ void MinHeap::siftUp() {
 bool MinHeap::empty() {
     return this->heap.size() <= 1;
 }
-
-const pair<int, int> *MinHeap::top() {
-    return this->minimum();
-}
-
-const pair<int, int> *MinHeap::back() {
-    return &this->heap.back();
-}

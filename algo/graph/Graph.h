@@ -35,16 +35,46 @@ public:
 
     friend ostream &operator<<(ostream &os, const Graph &graph);
 
+    /**
+     * Add an arc between to vertices, from i to j and from j to i
+     * @param i The first vertex
+     * @param j The second vertex
+     * @param p The weight of the arc
+     */
     void addArc(int i, int j, int p = 1);
 
+    /**
+     * Add an arc that is oriented, from i to j but not from j to i
+     * @param i The first vertex
+     * @param j The second vertex
+     * @param p The weight of the arc
+     */
     void addOrientedGraph(int i, int j, int p = 1);
 
+    /**
+     * Get the degree of a vertex
+     * @param i The vertex ID
+     * @return The degree of the vertex
+     */
     int degree(int i) const;
 
+    /**
+     * TODO: If the graph do not link all the vertex then the graph is not connected
+     * @return True if the graph is connected
+     */
     bool isConnected() const;
 
+    /**
+     * If an arc point from A to B but not from B to A then the graph is directed
+     * @return True if the graph is directed
+     */
     bool isDirected() const;
 
+
+    /**
+     * If only one of the arc in the matrix is greater or less than 1 (or -1) then the graph is considered as weighted
+     * @return True if the arc is weighted
+     */
     bool isWeighted() const;
 
     /**

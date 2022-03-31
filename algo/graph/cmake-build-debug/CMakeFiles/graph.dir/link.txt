@@ -1,3 +1,1 @@
-C:\Users\oweng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\graph.dir/objects.a
-C:\Users\oweng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\ar.exe qc CMakeFiles\graph.dir/objects.a @CMakeFiles\graph.dir\objects1.rsp
-C:\Users\oweng\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.7172.20\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\graph.dir/objects.a -Wl,--no-whole-archive -o graph.exe -Wl,--out-implib,libgraph.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\graph.dir\linklibs.rsp
+/Library/Developer/CommandLineTools/usr/bin/c++ -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/graph.dir/main.cpp.o CMakeFiles/graph.dir/Graph.cpp.o CMakeFiles/graph.dir/MinHeap.cpp.o CMakeFiles/graph.dir/Utils.cpp.o -o graph 
