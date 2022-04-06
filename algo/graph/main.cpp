@@ -27,6 +27,7 @@ int main() {
     cout << "Degree of 0: " << g.degree(0) << endl;
     cout << "Is weighted: " << g.isWeighted() << endl;
     cout << "Is directed: " << g.isDirected() << endl;
+    cout << "Is connected: " << g.isConnected() << endl;
 
     cout << "Recursive depth first: ";
     g.recursiveDepthFirstSearch(printVertex);
@@ -66,6 +67,7 @@ int main() {
     cout << g << endl;
     cout << "Is weighted: " << g.isWeighted() << endl;
     cout << "Is directed: " << g.isDirected() << endl;
+    cout << "Is connected: " << g.isConnected() << endl;
     cout << endl << "Prim: ";
     g.prim(printVertex);
     cout << endl << "Dijkstra: ";

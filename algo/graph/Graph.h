@@ -13,18 +13,18 @@ private:
     int **matrix;
     int size = 0;
 
-    void recursiveDepthFirstVertexVisit(int vertex, bool visited[], void (*f)(int));
+    void recursiveDepthFirstVertexVisit(int vertex, bool visited[], void (*f)(int)) const;
 
-    void iterativeDepthFirstVertexVisit(int vertex, bool visited[], bool met[], void (*f)(int));
+    void iterativeDepthFirstVertexVisit(int vertex, bool visited[], bool met[], void (*f)(int)) const;
 
-    void iterativeBreadthFirstVertexVisit(int vertex, bool visited[], bool met[], void (*f)(int));
+    void iterativeBreadthFirstVertexVisit(int vertex, bool visited[], bool met[], void (*f)(int)) const;
 
     void iterativePriorityFirstVertexVisit(int vertex, bool visited[], bool met[], void (*f)(int), int *priorityBase,
-                                           int priority);
+                                           int priority) const;
 
-    void primVertexVisit(int vertex, bool visited[], void (*f)(int));
+    void primVertexVisit(int vertex, bool visited[], void (*f)(int)) const;
 
-    void dijkstraVertexVisit(int vertex, bool visited[], void (*f)(int));
+    void dijkstraVertexVisit(int vertex, bool visited[], void (*f)(int)) const;
 
 public:
     ~Graph();
@@ -80,42 +80,42 @@ public:
     /**
      * Recursive implementation of the depth first search in a graph
      */
-    void recursiveDepthFirstSearch();
+    void recursiveDepthFirstSearch() const;
 
     /**
      * Recursive implementation of the depth first search in a graph
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void recursiveDepthFirstSearch(void (*f)(int));
+    void recursiveDepthFirstSearch(void (*f)(int)) const;
 
     /**
      * Iterative implementation of the depth first search in a graph
      */
-    void iterativeDepthFirstSearch();
+    void iterativeDepthFirstSearch() const;
 
     /**
      * Iterative implementation of the depth first search in a graph
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void iterativeDepthFirstSearch(void (*f)(int));
+    void iterativeDepthFirstSearch(void (*f)(int)) const;
 
     /**
      * Iterative implementation of the breadth first search in a graph
      */
-    void iterativeBreadthFirstSearch();
+    void iterativeBreadthFirstSearch() const;
 
     /**
      * Iterative implementation of the breadth first search in a graph
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void iterativeBreadthFirstSearch(void (*f)(int));
+    void iterativeBreadthFirstSearch(void (*f)(int)) const;
 
     /**
      * Iterative generic implementation to search in a graph, based on priority
      * A generic implementation of breadth first and depth first search
      * @param priority -1 for depth first search and 1 for breadth first search
      */
-    void iterativePriorityFirstSearch(int priority = -1);
+    void iterativePriorityFirstSearch(int priority = -1) const;
 
     /**
      * Iterative generic implementation to search in a graph, based on priority
@@ -123,27 +123,27 @@ public:
      * @param f The function that operate on the vertex (example: printing the vertex)
      * @param priority -1 for depth first search and 1 for breadth first search
      */
-    void iterativePriorityFirstSearch(void (*f)(int), int priority = -1);
+    void iterativePriorityFirstSearch(void (*f)(int), int priority = -1) const;
 
     /**
      * Prim tree algorithm
      */
-    void prim();
+    void prim() const;
 
     /**
      * Prim tree algorithm
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void prim(void (*f)(int));
+    void prim(void (*f)(int)) const;
 
     /**
      * Dijkstra tree algorithm
      */
-    void dijkstra();
+    void dijkstra() const;
 
     /**
      * Dijkstra tree algorithm
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void dijkstra(void (*f)(int));
+    void dijkstra(void (*f)(int)) const;
 };

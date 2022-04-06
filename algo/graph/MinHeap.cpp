@@ -35,7 +35,9 @@ pair<int, int> MinHeap::extractMinimum() {
 }
 
 void MinHeap::decreasePriority(int index, int newPriority) {
-    if (newPriority > this->heap[index].first) {}
+    if (newPriority > this->heap[index].first) {
+        cout << "Error: new value is smaller than the old one";
+    }
 
     this->heap[index].first = newPriority;
     while (index > 1 && this->heap[index / 2].first > this->heap[index].first) {
