@@ -5,6 +5,7 @@
 #pragma once
 
 #include <ostream>
+#include <stack>
 
 using namespace std;
 
@@ -25,6 +26,8 @@ private:
     void primVertexVisit(int vertex, bool visited[], void (*f)(int)) const;
 
     void dijkstraVertexVisit(int vertex, bool visited[], void (*f)(int)) const;
+
+    int visitConnectedVertex(int vertex, int mark[], int* n, stack<int> *q, void (*f)(vector<int>)) const;
 
 public:
     ~Graph();
@@ -146,4 +149,15 @@ public:
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
     void dijkstra(void (*f)(int)) const;
+
+    /**
+     * Operate on a group of connected vertices
+     */
+    void connectedVertices() const;
+
+    /**
+     * Operate on a group of connected vertices
+     * @param f The function that operate on the connected vertices
+     */
+    void connectedVertices(void (*f)(vector<int>)) const;
 };

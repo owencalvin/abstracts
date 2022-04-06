@@ -1,10 +1,18 @@
 #include <iostream>
+#include <vector>
 #include "Graph.h"
 
 using namespace std;
 
 void printVertex(int i) {
     cout << to_string(i) << " ";
+}
+
+void printVertices(vector<int> vertices) {
+    for (auto v : vertices) {
+        cout << v << " ";
+    }
+    cout << " | ";
 }
 
 int main() {
@@ -25,6 +33,10 @@ int main() {
     cout << "Is weighted: " << g.isWeighted() << endl;
     cout << "Is directed: " << g.isDirected() << endl;
     cout << "Is connected: " << g.isConnected() << endl;
+
+    cout << "Connected vertices: ";
+    g.connectedVertices(printVertices);
+    cout << endl;
 
     cout << "Recursive depth first: ";
     g.recursiveDepthFirstSearch(printVertex);
@@ -50,7 +62,7 @@ int main() {
     g.addArc(0, 2, 2);
     g.addArc(2, 9, 1);
     g.addArc(3, 4, 1);
-    g.addArc(5, 3, 1);
+    g.addArc(5, 3,  1);
     g.addArc(5, 4, 3);
     g.addArc(6, 2, 1);
     g.addArc(6, 4, 1);

@@ -136,7 +136,7 @@ void Graph::recursiveDepthFirstVertexVisit(int vertex, bool *visited, void (*f)(
         f(vertex);
     }
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < this->size; i++) {
         if (this->matrix[vertex][i] != 0) {
             this->recursiveDepthFirstVertexVisit(i, visited, f);
         }
@@ -181,7 +181,7 @@ void Graph::iterativeDepthFirstVertexVisit(int vertex, bool *visited, bool *met,
             f(vertex);
         }
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < this->size; i++) {
             if (this->matrix[vertex][i] != 0) {
                 if (!visited[i] && !met[i]) {
                     met[i] = true;
@@ -230,7 +230,7 @@ void Graph::iterativeBreadthFirstVertexVisit(int vertex, bool *visited, bool *me
             f(vertex);
         }
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < this->size; i++) {
             if (this->matrix[vertex][i] != 0) {
                 if (!visited[i] && !met[i]) {
                     met[i] = true;
@@ -288,7 +288,7 @@ void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *m
             f(vertex);
         }
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < this->size; i++) {
             if (this->matrix[vertex][i] != 0) {
                 if (!visited[i] && !met[i]) {
                     met[i] = true;
@@ -333,7 +333,7 @@ void Graph::primVertexVisit(int vertex, bool *visited, void (*f)(int)) const {
             f(vertex);
         }
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < this->size; i++) {
             if (this->matrix[vertex][i] != 0) {
                 if (!visited[i]) {
                     int priority = this->matrix[vertex][i];
@@ -377,7 +377,7 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, void (*f)(int)) const
             f(vertex);
         }
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < this->size; i++) {
             if (this->matrix[vertex][i] != 0) {
                 if (!visited[i]) {
                     int priority = current_vertex_priority + this->matrix[vertex][i];
@@ -386,6 +386,68 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, void (*f)(int)) const
             }
         }
     }
+}
+
+// endregion
+
+// region Connected vertices
+
+void Graph::connectedVertices() const {
+    this->connectedVertices(nullptr);
+}
+
+void Graph::connectedVertices(void (*f)(vector<int>)) const {
+    int *mark = Utils::initArray(0, this->size);
+    int *n = new int(0);
+    auto *q = new stack<int>;
+
+    for (int i = 0; i < this->size; ++i) {
+        if (mark[i] == 0) {
+            this->visitConnectedVertex(i, mark, n, q, f);
+        }
+    }
+
+    delete[] mark;
+    delete q;
+    delete n;
+}
+
+// FIX: Visit connected vertices
+int Graph::visitConnectedVertex(int vertex, int mark[], int* n, stack<int> *q, void (*f)(vector<int>)) const {
+    (*n)++;
+    int minimum = *n;
+    mark[vertex] = 1;
+    q->push(vertex);
+
+    for (int i = 0; i < this->size; i++) {
+        if (this->matrix[vertex][i] != 0) {
+            int M = mark[i];
+
+            if (mark[i] == 0) {
+                M = this->visitConnectedVertex(i, mark, n, q, f);
+            }
+
+            minimum = min(minimum, M);
+        }
+    }
+
+    if (minimum == mark[vertex]) {
+        vector<int> connectedVertices;
+
+        int v = INT_MIN;
+        while (v != vertex) {
+            v = q->top();
+            mark[v] = this->size + 1;
+            connectedVertices.push_back(v);
+            q->pop();
+        }
+
+        if (f != nullptr) {
+            f(connectedVertices);
+        }
+    }
+
+    return minimum;
 }
 
 // endregion
