@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 void printVertex(int i) {
     cout << to_string(i) << " ";
 }
