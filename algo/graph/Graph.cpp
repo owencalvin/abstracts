@@ -2,7 +2,6 @@
 // Created by owen on 21/02/2022.
 //
 
-#include <string>
 #include <vector>
 #include <stack>
 #include <queue>
@@ -264,7 +263,8 @@ void Graph::iterativePriorityFirstSearch(void (*f)(int), int priority) const {
     delete priorityBase;
 }
 
-void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(int), int* priorityBase, int priority) const {
+void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(int), int *priorityBase,
+                                              int priority) const {
     if (visited[vertex]) {
         return;
     }

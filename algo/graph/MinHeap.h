@@ -27,13 +27,13 @@ public:
      * @param value The actual value
      * @return A pointer to the inserted value
      */
-    const pair<int, int>* insert(int priority, int value);
+    const pair<int, int> *insert(int priority, int value);
 
     /**
      * Get the minimum value of the heap (=== the top value)
      * @return A pointer to minimum value of the heap (=== the top value)
      */
-    const pair<int, int>* minimum();
+    const pair<int, int> *minimum();
 
     /**
      * Return the minimum and remove it from the heap, then reorganize the heap
