@@ -9,6 +9,9 @@
 
 using namespace std;
 
+/**
+ * Graph implementation
+ */
 class Graph {
 private:
     int **matrix;
@@ -68,7 +71,7 @@ public:
     int degree(char i) const;
 
     /**
-     * TODO: If the graph do not link all the vertex then the graph is not connected
+     * Determine if the graph is connected or not
      * @return True if the graph is connected
      */
     bool isConnected() const;

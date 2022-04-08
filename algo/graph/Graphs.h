@@ -4,6 +4,9 @@
 
 #include "Graph.h"
 
+/**
+ * Get different recurrent graphs
+ */
 class Graphs {
 public:
     static Graph getBasicGraph() {

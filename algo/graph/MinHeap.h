@@ -8,6 +8,9 @@
 
 using namespace std;
 
+/**
+ * A priority queue implementation, similar as std::priority_queue
+ */
 class MinHeap {
 private:
     vector<pair<int, int>> heap;

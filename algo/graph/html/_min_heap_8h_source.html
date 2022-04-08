@@ -75,26 +75,26 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span>std;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_min_heap.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_min_heap.html">MinHeap</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    vector&lt;pair&lt;int, int&gt;&gt; heap;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_min_heap.html">MinHeap</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_min_heap.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_min_heap.html">MinHeap</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    vector&lt;pair&lt;int, int&gt;&gt; heap;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_min_heap.html#aa00b76c0402533e64272f6088ef4b684">empty</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">const</span> pair&lt;int, int&gt; *<a class="code hl_function" href="class_min_heap.html#a5c3025a1ae559b110cd7898b29efc6a2">insert</a>(<span class="keywordtype">int</span> priority, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> pair&lt;int, int&gt; *<a class="code hl_function" href="class_min_heap.html#a8cf646efa5623be2b483924c9cb8155a">minimum</a>();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    pair&lt;int, int&gt; <a class="code hl_function" href="class_min_heap.html#a728f2651941b2bb3d2daf47eb41c37e4">extractMinimum</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_min_heap.html#acba65467ace653350ca5c646a91f3965">decreasePriority</a>(<span class="keywordtype">int</span> index, <span class="keywordtype">int</span> newPriority);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_min_heap.html#ae424d17d8ad3691ddb191f41d64a6e15">siftUp</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
-<div class="ttc" id="aclass_min_heap_html"><div class="ttname"><a href="class_min_heap.html">MinHeap</a></div><div class="ttdef"><b>Definition:</b> MinHeap.h:11</div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="class_min_heap.html">MinHeap</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_min_heap.html#aa00b76c0402533e64272f6088ef4b684">empty</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> pair&lt;int, int&gt; *<a class="code hl_function" href="class_min_heap.html#a5c3025a1ae559b110cd7898b29efc6a2">insert</a>(<span class="keywordtype">int</span> priority, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> pair&lt;int, int&gt; *<a class="code hl_function" href="class_min_heap.html#a8cf646efa5623be2b483924c9cb8155a">minimum</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    pair&lt;int, int&gt; <a class="code hl_function" href="class_min_heap.html#a728f2651941b2bb3d2daf47eb41c37e4">extractMinimum</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_min_heap.html#acba65467ace653350ca5c646a91f3965">decreasePriority</a>(<span class="keywordtype">int</span> index, <span class="keywordtype">int</span> newPriority);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_min_heap.html#ae424d17d8ad3691ddb191f41d64a6e15">siftUp</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="ttc" id="aclass_min_heap_html"><div class="ttname"><a href="class_min_heap.html">MinHeap</a></div><div class="ttdef"><b>Definition:</b> MinHeap.h:14</div></div>
 <div class="ttc" id="aclass_min_heap_html_a5c3025a1ae559b110cd7898b29efc6a2"><div class="ttname"><a href="class_min_heap.html#a5c3025a1ae559b110cd7898b29efc6a2">MinHeap::insert</a></div><div class="ttdeci">const pair&lt; int, int &gt; * insert(int priority, int value)</div><div class="ttdef"><b>Definition:</b> MinHeap.cpp:13</div></div>
 <div class="ttc" id="aclass_min_heap_html_a728f2651941b2bb3d2daf47eb41c37e4"><div class="ttname"><a href="class_min_heap.html#a728f2651941b2bb3d2daf47eb41c37e4">MinHeap::extractMinimum</a></div><div class="ttdeci">pair&lt; int, int &gt; extractMinimum()</div><div class="ttdef"><b>Definition:</b> MinHeap.cpp:23</div></div>
 <div class="ttc" id="aclass_min_heap_html_a8cf646efa5623be2b483924c9cb8155a"><div class="ttname"><a href="class_min_heap.html#a8cf646efa5623be2b483924c9cb8155a">MinHeap::minimum</a></div><div class="ttdeci">const pair&lt; int, int &gt; * minimum()</div><div class="ttdef"><b>Definition:</b> MinHeap.cpp:19</div></div>
