@@ -31,31 +31,51 @@ Graph::~Graph() {
     }
 }
 
-string Graph::toString() const {
-    return Utils::matrixToString(this->matrix, this->size);
+int Graph::getSize() const {
+    return this->size;
+}
+
+int **Graph::getMatrix() const {
+    return this->matrix;
+}
+
+string Graph::toStringIntVertex() const {
+    return Utils::matrixToStringIntVertex(this->matrix, this->size);
+}
+
+string Graph::toStringCharVertex() const {
+    return Utils::matrixToStringCharVertex(this->matrix, this->size);
 }
 
 ostream &operator<<(ostream &os, const Graph &graph) {
-    os << graph.toString();
+    os << graph.toStringIntVertex();
     return os;
 }
 
-void Graph::addArc(int i, int j, int p) {
-    this->matrix[i][j] = p;
-    this->matrix[j][i] = p;
+void Graph::addArc(char i, char j, int p) {
+    const unsigned int iInt = Utils::getIndexInAlphabet(i);
+    const unsigned int jInt = Utils::getIndexInAlphabet(j);
+
+    this->matrix[iInt][jInt] = p;
+    this->matrix[jInt][iInt] = p;
 }
 
-void Graph::addOrientedGraph(int i, int j, int p) {
-    this->matrix[i][j] = p;
+void Graph::addOrientedGraph(char i, char j, int p) {
+    const unsigned int iInt = Utils::getIndexInAlphabet(i);
+    const unsigned int jInt = Utils::getIndexInAlphabet(j);
+
+    this->matrix[iInt][jInt] = p;
 }
 
-int Graph::degree(int i) const {
+int Graph::degree(char i) const {
+    const unsigned int iInt = Utils::getIndexInAlphabet(i);
+
     int deg = 0;
 
     // Count the number of vertices that are connected the selected vertex
     // => If the weight of the arc between i and j is greater than zero then they are connected
     for (int j = 0; j < this->size; ++j) {
-        if (this->matrix[i][j] > 0) {
+        if (this->matrix[iInt][j] > 0) {
             deg++;
         }
     }
@@ -115,7 +135,7 @@ void Graph::recursiveDepthFirstSearch() const {
     this->recursiveDepthFirstSearch(nullptr);
 }
 
-void Graph::recursiveDepthFirstSearch(void (*f)(int)) const {
+void Graph::recursiveDepthFirstSearch(void (*f)(char)) const {
     bool *visited = Utils::initArray<bool>(false, this->size);
 
     for (int i = 0; i < this->size; ++i) {
@@ -125,7 +145,7 @@ void Graph::recursiveDepthFirstSearch(void (*f)(int)) const {
     delete[] visited;
 }
 
-void Graph::recursiveDepthFirstVertexVisit(int vertex, bool *visited, void (*f)(int)) const {
+void Graph::recursiveDepthFirstVertexVisit(int vertex, bool *visited, void (*f)(char)) const {
     if (visited[vertex]) {
         return;
     }
@@ -133,7 +153,7 @@ void Graph::recursiveDepthFirstVertexVisit(int vertex, bool *visited, void (*f)(
     visited[vertex] = true;
 
     if (f != nullptr) {
-        f(vertex);
+        f(Utils::getLetterFromAlphabetIndex(vertex));
     }
 
     for (int i = 0; i < this->size; i++) {
@@ -151,7 +171,7 @@ void Graph::iterativeDepthFirstSearch() const {
     this->iterativeDepthFirstSearch(nullptr);
 }
 
-void Graph::iterativeDepthFirstSearch(void (*f)(int)) const {
+void Graph::iterativeDepthFirstSearch(void (*f)(char)) const {
     bool *visited = Utils::initArray(false, this->size);
     bool *met = Utils::initArray(false, this->size);
 
@@ -163,7 +183,7 @@ void Graph::iterativeDepthFirstSearch(void (*f)(int)) const {
     delete[] met;
 }
 
-void Graph::iterativeDepthFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(int)) const {
+void Graph::iterativeDepthFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(char)) const {
     if (visited[vertex]) {
         return;
     }
@@ -178,7 +198,7 @@ void Graph::iterativeDepthFirstVertexVisit(int vertex, bool *visited, bool *met,
         visited[vertex] = true;
 
         if (f != nullptr) {
-            f(vertex);
+            f(Utils::getLetterFromAlphabetIndex(vertex));
         }
 
         for (int i = 0; i < this->size; i++) {
@@ -200,7 +220,7 @@ void Graph::iterativeBreadthFirstSearch() const {
     this->iterativeDepthFirstSearch(nullptr);
 }
 
-void Graph::iterativeBreadthFirstSearch(void (*f)(int)) const {
+void Graph::iterativeBreadthFirstSearch(void (*f)(char)) const {
     bool *visited = Utils::initArray(false, this->size);
     bool *met = Utils::initArray(false, this->size);
 
@@ -212,7 +232,7 @@ void Graph::iterativeBreadthFirstSearch(void (*f)(int)) const {
     delete[] met;
 }
 
-void Graph::iterativeBreadthFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(int)) const {
+void Graph::iterativeBreadthFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(char)) const {
     if (visited[vertex]) {
         return;
     }
@@ -227,7 +247,7 @@ void Graph::iterativeBreadthFirstVertexVisit(int vertex, bool *visited, bool *me
         visited[vertex] = true;
 
         if (f != nullptr) {
-            f(vertex);
+            f(Utils::getLetterFromAlphabetIndex(vertex));
         }
 
         for (int i = 0; i < this->size; i++) {
@@ -249,7 +269,7 @@ void Graph::iterativePriorityFirstSearch(int priority) const {
     this->iterativePriorityFirstSearch(nullptr, priority);
 }
 
-void Graph::iterativePriorityFirstSearch(void (*f)(int), int priority) const {
+void Graph::iterativePriorityFirstSearch(void (*f)(char), int priority) const {
     bool *visited = Utils::initArray(false, this->size);
     bool *met = Utils::initArray(false, this->size);
     int *priorityBase = new int(0);
@@ -263,7 +283,7 @@ void Graph::iterativePriorityFirstSearch(void (*f)(int), int priority) const {
     delete priorityBase;
 }
 
-void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(int), int *priorityBase,
+void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *met, void (*f)(char), int *priorityBase,
                                               int priority) const {
     if (visited[vertex]) {
         return;
@@ -285,7 +305,7 @@ void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *m
         visited[vertex] = true;
 
         if (f != nullptr) {
-            f(vertex);
+            f(Utils::getLetterFromAlphabetIndex(vertex));
         }
 
         for (int i = 0; i < this->size; i++) {
@@ -309,7 +329,7 @@ void Graph::prim() const {
     this->prim(nullptr);
 }
 
-void Graph::prim(void (*f)(int)) const {
+void Graph::prim(void (*f)(char)) const {
     bool *visited = Utils::initArray(false, this->size);
 
     for (int i = 0; i < this->size; ++i) {
@@ -317,7 +337,7 @@ void Graph::prim(void (*f)(int)) const {
     }
 }
 
-void Graph::primVertexVisit(int vertex, bool *visited, void (*f)(int)) const {
+void Graph::primVertexVisit(int vertex, bool *visited, void (*f)(char)) const {
     if (visited[vertex]) {
         return;
     }
@@ -330,7 +350,7 @@ void Graph::primVertexVisit(int vertex, bool *visited, void (*f)(int)) const {
         visited[vertex] = true;
 
         if (f != nullptr) {
-            f(vertex);
+            f(Utils::getLetterFromAlphabetIndex(vertex));
         }
 
         for (int i = 0; i < this->size; i++) {
@@ -352,13 +372,13 @@ void Graph::dijkstra() const {
     this->dijkstra(nullptr);
 }
 
-void Graph::dijkstra(void (*f)(int)) const {
+void Graph::dijkstra(void (*f)(char)) const {
     bool *visited = Utils::initArray<bool>(false, this->size);
 
     dijkstraVertexVisit(0, visited, f);
 }
 
-void Graph::dijkstraVertexVisit(int vertex, bool *visited, void (*f)(int)) const {
+void Graph::dijkstraVertexVisit(int vertex, bool *visited, void (*f)(char)) const {
     if (visited[vertex]) {
         return;
     }
@@ -374,7 +394,7 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, void (*f)(int)) const
         visited[vertex] = true;
 
         if (f != nullptr) {
-            f(vertex);
+            f(Utils::getLetterFromAlphabetIndex(vertex));
         }
 
         for (int i = 0; i < this->size; i++) {
@@ -396,7 +416,7 @@ void Graph::connectedVertices() const {
     this->connectedVertices(nullptr);
 }
 
-void Graph::connectedVertices(void (*f)(vector<int>)) const {
+void Graph::connectedVertices(void (*f)(vector<char>)) const {
     int *mark = Utils::initArray(0, this->size);
     int *n = new int(0);
     auto *q = new stack<int>;
@@ -413,7 +433,7 @@ void Graph::connectedVertices(void (*f)(vector<int>)) const {
 }
 
 // FIX: Visit connected vertices
-int Graph::visitConnectedVertex(int vertex, int mark[], int* n, stack<int> *q, void (*f)(vector<int>)) const {
+int Graph::visitConnectedVertex(int vertex, int mark[], int *n, stack<int> *q, void (*f)(vector<char>)) const {
     (*n)++;
     int minimum = *n;
     mark[vertex] = 1;
@@ -432,13 +452,13 @@ int Graph::visitConnectedVertex(int vertex, int mark[], int* n, stack<int> *q, v
     }
 
     if (minimum == mark[vertex]) {
-        vector<int> connectedVertices;
+        vector<char> connectedVertices;
 
         int v = INT_MIN;
         while (v != vertex) {
             v = q->top();
             mark[v] = this->size + 1;
-            connectedVertices.push_back(v);
+            connectedVertices.push_back(Utils::getLetterFromAlphabetIndex(v));
             q->pop();
         }
 

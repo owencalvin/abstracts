@@ -3,4 +3,4 @@ project(graph)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(graph main.cpp Graph.cpp Graph.h MinHeap.cpp MinHeap.h Utils.cpp Utils.h)
+add_executable(graph main.cpp Graph.cpp Graph.h MinHeap.cpp MinHeap.h Utils.cpp Utils.h Graphs.h)

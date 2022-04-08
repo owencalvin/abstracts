@@ -13,12 +13,42 @@ using namespace std;
 class Utils {
 public:
     /**
-     * Get a string representation of a 2D matrix
+     * Get the index of the letter in the alphabet (begins at 0)
+     * A => 0
+     * B => 1
+     * C => 2
+     * ...
+     * @param letter
+     * @return The letter index, it begins at index 0
+     */
+    static int getIndexInAlphabet(char letter);
+
+    /**
+     * Return the letter (char) that is positioned at a specified index in the alphabet
+     * 0 => 'A'
+     * 1 => 'B'
+     * 2 => 'C'
+     * ...
+     * @param letterIndex The index of the letter in the alphabet
+     * @return The letter (chat) that is positioned at the specified index
+     */
+    static char getLetterFromAlphabetIndex(int letterIndex);
+
+    /**
+     * Get a string representation of a 2D matrix with the vertices represented as integers
      * @param matrix The matrix (2D int array)
      * @param size The size of the matrix
      * @return The string representation of the matrix
      */
-    static string matrixToString(int **matrix, int size);
+    static string matrixToStringIntVertex(int **matrix, int size);
+
+    /**
+     * Get a string representation of a 2D matrix with the vertices represented as letters
+     * @param matrix The matrix (2D int array)
+     * @param size The size of the matrix
+     * @return The string representation of the matrix
+     */
+    static string matrixToStringCharVertex(int **matrix, int size);
 
     /**
      * Init an array of type T with a default value for each element
