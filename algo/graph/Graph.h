@@ -37,15 +37,37 @@ public:
 
     explicit Graph(int size);
 
+    friend ostream &operator<<(ostream &os, const Graph &graph);
+
+    /**
+     * Get a matrix representation of your graph with the vertices as integer
+     * @return A representation of your graph as an integer
+     */
     string toStringIntVertex() const;
 
+    /**
+     * Get a matrix representation of your graph with the vertices as string
+     * @return A representation of your graph as a string
+     */
     string toStringCharVertex() const;
 
+    /**
+     * Get all the informations about the graph as string
+     * @return The informations of the graph
+     */
+    string getInfos() const;
+
+    /**
+     * Get the size of your graph
+     * @return The size of your graph
+     */
     int getSize() const;
 
+    /**
+     * Get the matrix representation of your graph
+     * @return The matrix representation as int[][]
+     */
     int **getMatrix() const;
-
-    friend ostream &operator<<(ostream &os, const Graph &graph);
 
     /**
      * Add an arc between to vertices, from i to j and from j to i

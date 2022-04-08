@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['connectedvertices_0',['connectedVertices',['../class_graph.html#ab002e41850220347da0aee231740c7de',1,'Graph::connectedVertices() const'],['../class_graph.html#a445c72b285d9a42488f08679e42e4af7',1,'Graph::connectedVertices(void(*f)(vector&lt; char &gt;)) const']]]
+  ['booltoyesno_0',['boolToYesNo',['../class_utils.html#a74f265b26625418255606f6ccd2e1538',1,'Utils']]]
 ];

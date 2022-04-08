@@ -11,11 +11,8 @@ void printBasicGraph() {
 
     cout << "First graph g:" << endl;
     cout << g << endl;
-    cout << Utils::matrixToStringCharVertex(g.getMatrix(), g.getSize()) << endl;
+
     cout << "Degree of A: " << g.degree('A') << endl;
-    cout << "Is weighted: " << g.isWeighted() << endl;
-    cout << "Is directed: " << g.isDirected() << endl;
-    cout << "Is connected: " << g.isConnected() << endl;
 
     cout << "Connected vertices: ";
     g.connectedVertices(Graph::printVertices);
@@ -40,46 +37,31 @@ void printBasicGraph() {
 }
 
 void printPrimGraph() {
-    const Graph g_prim = Graphs::getPrimGraph();
+    const Graph g = Graphs::getPrimGraph();
 
-    cout << "Second graph g_prim:" << endl;
-    cout << g_prim << endl;
-
-    cout << "Is weighted: " << g_prim.isWeighted() << endl;
-    cout << "Is directed: " << g_prim.isDirected() << endl;
-    cout << "Is connected: " << g_prim.isConnected() << endl;
+    cout << "Second graph g:" << endl;
+    cout << g;
 
     cout << endl << "Prim: ";
-    g_prim.prim(Graph::printVertex);
+    g.prim(Graph::printVertex);
 
     cout << endl << "Dijkstra: ";
-    g_prim.dijkstra(Graph::printVertex);
+    g.dijkstra(Graph::printVertex);
 
     cout << endl << endl;
 }
 
 void printHenriqueGraph() {
-    const Graph g_prim = Graphs::getPrimGraph();
+    const Graph g = Graphs::getHenriqueGraph();
 
-    cout << "Second graph g_prim:" << endl;
-    cout << g_prim << endl;
-
-    cout << "Is weighted: " << g_prim.isWeighted() << endl;
-    cout << "Is directed: " << g_prim.isDirected() << endl;
-    cout << "Is connected: " << g_prim.isConnected() << endl;
-
-    cout << endl << "Prim: ";
-    g_prim.prim(Graph::printVertex);
-
-    cout << endl << "Dijkstra: ";
-    g_prim.dijkstra(Graph::printVertex);
-
-    cout << endl << endl;
+    cout << "Henrique graph g:" << endl;
+    cout << g;
 }
 
 int main() {
     printBasicGraph();
     printPrimGraph();
+    printHenriqueGraph();
 
     return 0;
 }

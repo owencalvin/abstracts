@@ -5,6 +5,7 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <sstream>
 #include "Graph.h"
 #include "Utils.h"
 #include "MinHeap.h"
@@ -47,8 +48,20 @@ string Graph::toStringCharVertex() const {
     return Utils::matrixToStringCharVertex(this->matrix, this->size);
 }
 
+string Graph::getInfos() const {
+    stringstream ss;
+
+    ss << Utils::matrixToStringCharVertex(this->matrix, this->size);
+    ss << "Size: " << to_string(this->getSize()) << endl;
+    ss << "Is weighted: " << Utils::boolToYesNo(this->isWeighted()) << endl;
+    ss << "Is directed: " << Utils::boolToYesNo(this->isDirected()) << endl;
+    ss << "Is connected: " <<  Utils::boolToYesNo(this->isConnected());
+
+    return ss.str();
+}
+
 ostream &operator<<(ostream &os, const Graph &graph) {
-    os << graph.toStringIntVertex();
+    os << graph.getInfos();
     return os;
 }
 

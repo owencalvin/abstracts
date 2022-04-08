@@ -74,3 +74,7 @@ int Utils::getIndexInAlphabet(char letter) {
 char Utils::getLetterFromAlphabetIndex(int letterIndex) {
     return toupper((char) (letterIndex + 'a'));
 }
+
+string Utils::boolToYesNo(bool value) {
+    return value ? "yes" : "no";
+}

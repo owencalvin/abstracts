@@ -51,6 +51,13 @@ public:
     static string matrixToStringCharVertex(int **matrix, int size);
 
     /**
+     * Convert a boolean value to "yes" or "no"
+     * @param value The boolean value
+     * @return The english representation of a boolean value ("yes" or "no") as string
+     */
+    static string boolToYesNo(bool value);
+
+    /**
      * Init an array of type T with a default value for each element
      * @tparam T The array type
      * @param default_value The default value
