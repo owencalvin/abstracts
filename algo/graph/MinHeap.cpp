@@ -2,16 +2,15 @@
 // Created by owen on 28/03/2022.
 //
 
-#include <climits>
 #include "MinHeap.h"
 #include "Utils.h"
 
 MinHeap::MinHeap() {
-    this->heap.emplace_back(INT_MIN, INT_MIN);
+    this->heap.emplace_back(INT32_MIN, INT32_MIN);
 }
 
 const pair<int, int> *MinHeap::insert(int priority, int value) {
-    this->heap.emplace_back(INT_MAX, value);
+    this->heap.emplace_back(INT32_MAX, value);
     this->decreasePriority(this->heap.size() - 1, priority);
     return &this->heap.back();
 }
@@ -44,6 +43,16 @@ void MinHeap::decreasePriority(int index, int newPriority) {
         Utils::swap(this->heap[index], this->heap[index / 2]);
         index /= 2;
     }
+}
+
+int MinHeap::getIndexByValue(int value) {
+    for (int i = 0; i < this->heap.size(); i++) {
+        if (this->heap[i].second == value) {
+            return i;
+        }
+    }
+
+    return -1;
 }
 
 void MinHeap::siftUp() {

@@ -52,6 +52,12 @@ public:
     void decreasePriority(int index, int newPriority);
 
     /**
+     * Get the index of a value in the priority queue
+     * @param value The value to find
+     */
+    int getIndexByValue(int value);
+
+    /**
      * In french: "RendreMinimier"
      */
     void siftUp();

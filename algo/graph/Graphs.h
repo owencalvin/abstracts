@@ -16,11 +16,13 @@ public:
         g.addArc('A', 'F');
         g.addArc('A', 'G');
         g.addArc('A', 'C');
+        g.addArc('D', 'E');
         g.addArc('F', 'D');
         g.addArc('F', 'E');
         g.addArc('G', 'E');
         g.addArc('I', 'J');
-        g.addArc('I', 'K');
+        g.addArc('I', 'K');;
+        g.addArc('J', 'K');
 
         return g;
     }

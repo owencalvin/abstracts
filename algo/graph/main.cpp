@@ -2,60 +2,61 @@
 #include <vector>
 #include "Graph.h"
 #include "Graphs.h"
-#include "Utils.h"
 
 using namespace std;
 
 void printBasicGraph() {
     const Graph g = Graphs::getBasicGraph();
 
-    cout << "First graph g:" << endl;
+    cout << "First graph g:";
     cout << g << endl;
 
     cout << "Degree of A: " << g.degree('A') << endl;
 
     cout << "Connected vertices: ";
-    g.connectedVertices(Graph::printVertices);
+    g.connectedVertices();
     cout << endl;
 
     cout << "Recursive depth first: ";
-    g.recursiveDepthFirstSearch(Graph::printVertex);
+    g.recursiveDepthFirstSearch();
 
     cout << endl << "Iterative depth first: ";
-    g.iterativeDepthFirstSearch(Graph::printVertex);
+    g.iterativeDepthFirstSearch();
 
     cout << endl << "Iterative breadth first: ";
-    g.iterativeBreadthFirstSearch(Graph::printVertex);
+    g.iterativeBreadthFirstSearch();
 
     cout << endl << "Iterative priority first (=== depth first): ";
-    g.iterativePriorityFirstSearch(Graph::printVertex, -1);
+    g.iterativePriorityFirstSearch(-1);
 
     cout << endl << "Iterative priority first (=== breadth first): ";
-    g.iterativePriorityFirstSearch(Graph::printVertex, 1);
+    g.iterativePriorityFirstSearch(1);
 
-    cout << endl << endl;
+    cout << endl << endl << endl;
 }
 
 void printPrimGraph() {
     const Graph g = Graphs::getPrimGraph();
 
-    cout << "Second graph g:" << endl;
+    cout << "Second graph g:";
     cout << g;
 
     cout << endl << "Prim: ";
-    g.prim(Graph::printVertex);
+    g.prim();
 
     cout << endl << "Dijkstra: ";
-    g.dijkstra(Graph::printVertex);
+    g.dijkstra();
 
-    cout << endl << endl;
+    cout << endl << endl << endl;
 }
 
 void printHenriqueGraph() {
     const Graph g = Graphs::getHenriqueGraph();
 
-    cout << "Henrique graph g:" << endl;
+    cout << "Henrique graph g:";
     cout << g;
+
+    cout << endl << endl << endl;
 }
 
 int main() {

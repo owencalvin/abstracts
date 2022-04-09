@@ -83,6 +83,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a728f2651941b2bb3d2daf47eb41c37e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba65467ace653350ca5c646a91f3965"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_min_heap.html#acba65467ace653350ca5c646a91f3965">decreasePriority</a> (int index, int newPriority)</td></tr>
 <tr class="separator:acba65467ace653350ca5c646a91f3965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a680d134b7a6c3ed256866184b26cbd59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_min_heap.html#a680d134b7a6c3ed256866184b26cbd59">getIndexByValue</a> (int value)</td></tr>
+<tr class="separator:a680d134b7a6c3ed256866184b26cbd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae424d17d8ad3691ddb191f41d64a6e15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_min_heap.html#ae424d17d8ad3691ddb191f41d64a6e15">siftUp</a> ()</td></tr>
 <tr class="separator:ae424d17d8ad3691ddb191f41d64a6e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -157,6 +159,30 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Return the minimum and remove it from the heap, then reorganize the heap </p><dl class="section return"><dt>Returns</dt><dd>A pair, the first value is the priority and the second value is the actual value: pair&lt;int priority, int value&gt; </dd></dl>
+
+</div>
+</div>
+<a id="a680d134b7a6c3ed256866184b26cbd59" name="a680d134b7a6c3ed256866184b26cbd59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680d134b7a6c3ed256866184b26cbd59">&#9670;&nbsp;</a></span>getIndexByValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MinHeap::getIndexByValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Get the index of a value in the priority queue </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to find </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

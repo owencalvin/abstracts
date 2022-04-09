@@ -81,7 +81,7 @@ template<class T>
 T *Utils::initArray(T default_value, int size) {
     T *arr = new T[size];
 
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; i++) {
         arr[i] = default_value;
     }
 

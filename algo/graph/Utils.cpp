@@ -12,7 +12,7 @@ string Utils::matrixToStringIntVertex(int **matrix, int size) {
     ss << endl << "     ";
 
     stringstream first_line;
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; i++) {
         first_line << setfill('0') << setw(size_str_length) << i << "  ";
     }
 
@@ -23,7 +23,7 @@ string Utils::matrixToStringIntVertex(int **matrix, int size) {
 
     ss << endl;
 
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; i++) {
         ss << setfill('0') << setw(size_str_length) << i << " |  ";
 
         for (int j = 0; j < size; ++j) {
@@ -44,7 +44,7 @@ string Utils::matrixToStringCharVertex(int **matrix, int size) {
     ss << endl << "      ";
 
     stringstream first_line;
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; i++) {
         first_line << Utils::getLetterFromAlphabetIndex(i) << "   ";
     }
 
@@ -53,7 +53,7 @@ string Utils::matrixToStringCharVertex(int **matrix, int size) {
 
     ss << endl << " ";
 
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; i++) {
         ss << Utils::getLetterFromAlphabetIndex(i) << " |  ";
 
         for (int j = 0; j < size; ++j) {
