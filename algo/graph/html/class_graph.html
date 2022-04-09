@@ -111,10 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a76db65c9541a5b748a059911efa72629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad05b68b6236714d45d9e8862bff3c354"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ad05b68b6236714d45d9e8862bff3c354">dijkstra</a> (bool debug=false, void(*f)(char)=<a class="el" href="class_graph.html#a87e28713b6fd2ccb3acafc64c603d9cd">Graph::printVertex</a>) const</td></tr>
 <tr class="separator:ad05b68b6236714d45d9e8862bff3c354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab002e41850220347da0aee231740c7de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#ab002e41850220347da0aee231740c7de">connectedVertices</a> () const</td></tr>
-<tr class="separator:ab002e41850220347da0aee231740c7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a445c72b285d9a42488f08679e42e4af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a445c72b285d9a42488f08679e42e4af7">connectedVertices</a> (void(*f)(vector&lt; char &gt;)) const</td></tr>
-<tr class="separator:a445c72b285d9a42488f08679e42e4af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29af32108929c0ea70f7fed63f399ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph.html#a29af32108929c0ea70f7fed63f399ac5">connectedVertices</a> (void(*f)(vector&lt; char &gt;)=<a class="el" href="class_graph.html#af412a7e1194d902dc827250dade10f02">Graph::printVertices</a>) const</td></tr>
+<tr class="separator:a29af32108929c0ea70f7fed63f399ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -249,26 +247,8 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
 
 </div>
 </div>
-<a id="ab002e41850220347da0aee231740c7de" name="ab002e41850220347da0aee231740c7de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab002e41850220347da0aee231740c7de">&#9670;&nbsp;</a></span>connectedVertices() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Graph::connectedVertices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Operate on a group of connected vertices </p>
-
-</div>
-</div>
-<a id="a445c72b285d9a42488f08679e42e4af7" name="a445c72b285d9a42488f08679e42e4af7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a445c72b285d9a42488f08679e42e4af7">&#9670;&nbsp;</a></span>connectedVertices() <span class="overload">[2/2]</span></h2>
+<a id="a29af32108929c0ea70f7fed63f399ac5" name="a29af32108929c0ea70f7fed63f399ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29af32108929c0ea70f7fed63f399ac5">&#9670;&nbsp;</a></span>connectedVertices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,7 +257,7 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
           <td class="memname">void Graph::connectedVertices </td>
           <td>(</td>
           <td class="paramtype">void(*)(vector&lt; char &gt;)&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
+          <td class="paramname"><em>f</em> = <code><a class="el" href="class_graph.html#af412a7e1194d902dc827250dade10f02">Graph::printVertices</a></code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>

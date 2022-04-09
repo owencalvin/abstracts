@@ -433,10 +433,7 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, bool* met, bool debug
 
 // region Connected vertices
 
-void Graph::connectedVertices() const {
-    this->connectedVertices(Graph::printVertices);
-}
-
+// FIX: Visit connected vertices
 void Graph::connectedVertices(void (*f)(vector<char>)) const {
     int *mark = Utils::initArray(0, this->size);
     int *n = new int(0);
@@ -453,7 +450,6 @@ void Graph::connectedVertices(void (*f)(vector<char>)) const {
     delete n;
 }
 
-// FIX: Visit connected vertices
 int Graph::visitConnectedVertex(int vertex, int mark[], int *n, stack<int> *q, void (*f)(vector<char>)) const {
     (*n)++;
     int minimum = *n;

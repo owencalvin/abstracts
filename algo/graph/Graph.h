@@ -157,14 +157,9 @@ public:
 
     /**
      * Operate on a group of connected vertices
-     */
-    void connectedVertices() const;
-
-    /**
-     * Operate on a group of connected vertices
      * @param f The function that operate on the connected vertices
      */
-    void connectedVertices(void (*f)(vector<char>)) const;
+    void connectedVertices(void (*f)(vector<char>) = Graph::printVertices) const;
 
     /**
      * Print a vertex to the console
