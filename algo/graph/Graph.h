@@ -156,6 +156,7 @@ public:
     void dijkstra(bool debug = false, void (*f)(char) = Graph::printVertex) const;
 
     /**
+     * TO-FIX: Do not work properly
      * Operate on a group of connected vertices
      * @param f The function that operate on the connected vertices
      */

@@ -433,7 +433,6 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, bool* met, bool debug
 
 // region Connected vertices
 
-// FIX: Visit connected vertices
 void Graph::connectedVertices(void (*f)(vector<char>)) const {
     int *mark = Utils::initArray(0, this->size);
     int *n = new int(0);
