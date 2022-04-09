@@ -5,5 +5,6 @@ var searchData=
   ['getinfos_2',['getInfos',['../class_graph.html#ae7dc2301be1019abd3e9954e86aa89e5',1,'Graph']]],
   ['getletterfromalphabetindex_3',['getLetterFromAlphabetIndex',['../class_utils.html#abc6ca4d23cebdf98a46ebc05f7fa7143',1,'Utils']]],
   ['getmatrix_4',['getMatrix',['../class_graph.html#ab7136b110ea62bec413f2d359f2b6dfe',1,'Graph']]],
-  ['getsize_5',['getSize',['../class_graph.html#abe53f5d640fd633e100aa77c6e714f41',1,'Graph']]]
+  ['getsize_5',['getSize',['../class_graph.html#abe53f5d640fd633e100aa77c6e714f41',1,'Graph']]],
+  ['graph_6',['Graph',['../class_graph.html#a7e963f57fa2c368e79db1562112aed54',1,'Graph']]]
 ];

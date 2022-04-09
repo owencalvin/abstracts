@@ -4,9 +4,27 @@
 
 #include "MinHeap.h"
 #include "Utils.h"
+#include <sstream>
 
 MinHeap::MinHeap() {
     this->heap.emplace_back(INT32_MIN, INT32_MIN);
+}
+
+ostream &operator<<(ostream &os, const MinHeap &mh) {
+    os << mh.toString();
+    return os;
+}
+
+string MinHeap::toString() const {
+    stringstream ss;
+
+    for (int i = 1; i < this->heap.size(); i++) {
+        ss << "(" << this->heap[i].first << ", " << Utils::getLetterFromAlphabetIndex(this->heap[i].second) << ")  ";
+    }
+
+    ss << endl;
+
+    return ss.str();
 }
 
 const pair<int, int> *MinHeap::insert(int priority, int value) {

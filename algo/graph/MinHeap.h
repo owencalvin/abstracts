@@ -18,6 +18,10 @@ private:
 public:
     MinHeap();
 
+    friend ostream &operator<<(ostream &os, const MinHeap &mh);
+
+    string toString() const ;
+
     /**
      * Determines if the heap is empty
      * @return True if the heap is empty

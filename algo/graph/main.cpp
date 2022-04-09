@@ -41,11 +41,11 @@ void printPrimGraph() {
     cout << "Second graph g:";
     cout << g;
 
-    cout << endl << "Prim: ";
-    g.prim();
+    cout << endl << "Prim: " << endl;
+    g.prim(true);
 
-    cout << endl << "Dijkstra: ";
-    g.dijkstra();
+    cout << endl << "Dijkstra: " << endl;
+    g.dijkstra(true);
 
     cout << endl << endl << endl;
 }

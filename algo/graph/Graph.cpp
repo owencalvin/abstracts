@@ -144,10 +144,6 @@ bool Graph::isConnected() const {
 
 // region recursive depth-first search
 
-void Graph::recursiveDepthFirstSearch() const {
-    this->recursiveDepthFirstSearch(Graph::printVertex);
-}
-
 void Graph::recursiveDepthFirstSearch(void (*f)(char)) const {
     bool *visited = Utils::initArray<bool>(false, this->size);
 
@@ -179,10 +175,6 @@ void Graph::recursiveDepthFirstVertexVisit(int vertex, bool *visited, void (*f)(
 // endregion
 
 // region iterative depth-first search
-
-void Graph::iterativeDepthFirstSearch() const {
-    this->iterativeDepthFirstSearch(Graph::printVertex);
-}
 
 void Graph::iterativeDepthFirstSearch(void (*f)(char)) const {
     bool *visited = Utils::initArray(false, this->size);
@@ -229,10 +221,6 @@ void Graph::iterativeDepthFirstVertexVisit(int vertex, bool *visited, bool *met,
 
 // region iterative breadth-first search
 
-void Graph::iterativeBreadthFirstSearch() const {
-    this->iterativeDepthFirstSearch(Graph::printVertex);
-}
-
 void Graph::iterativeBreadthFirstSearch(void (*f)(char)) const {
     bool *visited = Utils::initArray(false, this->size);
     bool *met = Utils::initArray(false, this->size);
@@ -278,11 +266,7 @@ void Graph::iterativeBreadthFirstVertexVisit(int vertex, bool *visited, bool *me
 
 // region iterative priority-first search
 
-void Graph::iterativePriorityFirstSearch(int priority) const {
-    this->iterativePriorityFirstSearch(Graph::printVertex, priority);
-}
-
-void Graph::iterativePriorityFirstSearch(void (*f)(char), int priority) const {
+void Graph::iterativePriorityFirstSearch(int priority, void (*f)(char)) const {
     bool *visited = Utils::initArray(false, this->size);
     bool *met = Utils::initArray(false, this->size);
     int *priorityBase = new int(0);
@@ -338,23 +322,19 @@ void Graph::iterativePriorityFirstVertexVisit(int vertex, bool *visited, bool *m
 
 // region Prim
 
-void Graph::prim() const {
-    this->prim(Graph::printVertex);
-}
-
-void Graph::prim(void (*f)(char)) const {
+void Graph::prim(bool debug, void (*f)(char)) const {
     bool *visited = Utils::initArray(false, this->size);
     bool *met = Utils::initArray(false, this->size);
 
     for (int i = 0; i < this->size; i++) {
-        this->primVertexVisit(i, visited, met, f);
+        this->primVertexVisit(i, visited, met, debug, f);
     }
 
     delete[] visited;
     delete[] met;
 }
 
-void Graph::primVertexVisit(int vertex, bool *visited, bool *met, void (*f)(char)) const {
+void Graph::primVertexVisit(int vertex, bool *visited, bool *met, bool debug, void (*f)(char)) const {
     if (visited[vertex]) {
         return;
     }
@@ -387,6 +367,10 @@ void Graph::primVertexVisit(int vertex, bool *visited, bool *met, void (*f)(char
                 }
             }
         }
+
+        if (debug) {
+            cout << mh;
+        }
     }
 }
 
@@ -394,21 +378,17 @@ void Graph::primVertexVisit(int vertex, bool *visited, bool *met, void (*f)(char
 
 // region Dijkstra
 
-void Graph::dijkstra() const {
-    this->dijkstra(Graph::printVertex);
-}
-
-void Graph::dijkstra(void (*f)(char)) const {
+void Graph::dijkstra(bool debug, void (*f)(char)) const {
     bool *visited = Utils::initArray<bool>(false, this->size);
     bool *met = Utils::initArray<bool>(false, this->size);
 
-    dijkstraVertexVisit(0, visited, met, f);
+    dijkstraVertexVisit(0, visited, met, debug, f);
 
     delete[] visited;
     delete[] met;
 }
 
-void Graph::dijkstraVertexVisit(int vertex, bool *visited, bool* met, void (*f)(char)) const {
+void Graph::dijkstraVertexVisit(int vertex, bool *visited, bool* met, bool debug, void (*f)(char)) const {
     if (visited[vertex]) {
         return;
     }
@@ -441,6 +421,10 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, bool* met, void (*f)(
                     }
                 }
             }
+        }
+
+        if (debug) {
+            cout << mh;
         }
     }
 }

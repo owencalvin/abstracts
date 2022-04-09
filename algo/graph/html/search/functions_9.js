@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['recursivedepthfirstsearch_0',['recursiveDepthFirstSearch',['../class_graph.html#afa2e99c064863d049ba6243b9e1f09b3',1,'Graph::recursiveDepthFirstSearch() const'],['../class_graph.html#a755e6e7eaffe8a2998dff111c5ddd59b',1,'Graph::recursiveDepthFirstSearch(void(*f)(char)) const']]]
+  ['recursivedepthfirstsearch_0',['recursiveDepthFirstSearch',['../class_graph.html#a54619a1e7f1d67c0dfb47c82d3698715',1,'Graph']]]
 ];

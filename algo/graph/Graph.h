@@ -26,15 +26,19 @@ private:
     void iterativePriorityFirstVertexVisit(int vertex, bool visited[], bool met[], void (*f)(char), int *priorityBase,
                                            int priority) const;
 
-    void primVertexVisit(int vertex, bool visited[], bool met[], void (*f)(char)) const;
+    void primVertexVisit(int vertex, bool visited[], bool met[], bool debug, void (*f)(char)) const;
 
-    void dijkstraVertexVisit(int vertex, bool visited[], bool met[], void (*f)(char)) const;
+    void dijkstraVertexVisit(int vertex, bool visited[], bool met[], bool debug, void (*f)(char)) const;
 
     int visitConnectedVertex(int vertex, int mark[], int *n, stack<int> *q, void (*f)(vector<char>)) const;
 
 public:
     ~Graph();
 
+    /**
+     * Initialize a graph
+     * @param size The size of the graph
+     */
     explicit Graph(int size);
 
     friend ostream &operator<<(ostream &os, const Graph &graph);
@@ -113,43 +117,21 @@ public:
 
     /**
      * Recursive implementation of the depth first search in a graph
-     */
-    void recursiveDepthFirstSearch() const;
-
-    /**
-     * Recursive implementation of the depth first search in a graph
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void recursiveDepthFirstSearch(void (*f)(char)) const;
-
-    /**
-     * Iterative implementation of the depth first search in a graph
-     */
-    void iterativeDepthFirstSearch() const;
+    void recursiveDepthFirstSearch(void (*f)(char) = Graph::printVertex) const;
 
     /**
      * Iterative implementation of the depth first search in a graph
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void iterativeDepthFirstSearch(void (*f)(char)) const;
-
-    /**
-     * Iterative implementation of the breadth first search in a graph
-     */
-    void iterativeBreadthFirstSearch() const;
+    void iterativeDepthFirstSearch(void (*f)(char) = Graph::printVertex) const;
 
     /**
      * Iterative implementation of the breadth first search in a graph
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void iterativeBreadthFirstSearch(void (*f)(char)) const;
-
-    /**
-     * Iterative generic implementation to search in a graph, based on priority
-     * A generic implementation of breadth first and depth first search
-     * @param priority -1 for depth first search and 1 for breadth first search
-     */
-    void iterativePriorityFirstSearch(int priority = -1) const;
+    void iterativeBreadthFirstSearch(void (*f)(char) = Graph::printVertex) const;
 
     /**
      * Iterative generic implementation to search in a graph, based on priority
@@ -157,29 +139,21 @@ public:
      * @param f The function that operate on the vertex (example: printing the vertex)
      * @param priority -1 for depth first search and 1 for breadth first search
      */
-    void iterativePriorityFirstSearch(void (*f)(char), int priority = -1) const;
+    void iterativePriorityFirstSearch(int priority = -1, void (*f)(char) = Graph::printVertex) const;
 
     /**
      * Prim tree algorithm
-     */
-    void prim() const;
-
-    /**
-     * Prim tree algorithm
+     * @param debug Print the neighbour vertices with their priority at each iteration
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void prim(void (*f)(char)) const;
+    void prim(bool debug = false, void (*f)(char) = Graph::printVertex) const;
 
     /**
      * Dijkstra tree algorithm
-     */
-    void dijkstra() const;
-
-    /**
-     * Dijkstra tree algorithm
+     * @param debug Print the neighbour vertices with their priority at each iteration
      * @param f The function that operate on the vertex (example: printing the vertex)
      */
-    void dijkstra(void (*f)(char)) const;
+    void dijkstra(bool debug = false, void (*f)(char) = Graph::printVertex) const;
 
     /**
      * Operate on a group of connected vertices
