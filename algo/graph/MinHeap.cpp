@@ -22,8 +22,6 @@ string MinHeap::toString() const {
         ss << "(" << this->heap[i].first << ", " << Utils::getLetterFromAlphabetIndex(this->heap[i].second) << ")  ";
     }
 
-    ss << endl;
-
     return ss.str();
 }
 

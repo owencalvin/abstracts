@@ -369,7 +369,7 @@ void Graph::primVertexVisit(int vertex, bool *visited, bool *met, bool debug, vo
         }
 
         if (debug) {
-            cout << mh;
+            cout << mh << endl;
         }
     }
 }
@@ -424,7 +424,7 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, bool* met, bool debug
         }
 
         if (debug) {
-            cout << mh;
+            cout << mh << endl;
         }
     }
 }
