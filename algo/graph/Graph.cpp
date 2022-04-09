@@ -362,7 +362,7 @@ void Graph::primVertexVisit(int vertex, bool *visited, bool *met, bool debug, vo
                         mh.insert(newPriority, i);
                         met[i] = true;
                     } else if (newPriority < *priority) {
-                        mh.decreasePriority(mh.getIndexByValue(i), newPriority - 1);
+                        mh.decreasePriority(mh.getIndexByValue(i), newPriority);
                     }
                 }
             }
@@ -417,7 +417,7 @@ void Graph::dijkstraVertexVisit(int vertex, bool *visited, bool* met, bool debug
                         mh.insert(newPriority, i);
                         met[i] = true;
                     } else if (newPriority < currentPriority) {
-                        mh.decreasePriority(mh.getIndexByValue(i), newPriority - 1);
+                        mh.decreasePriority(mh.getIndexByValue(i), newPriority);
                     }
                 }
             }
