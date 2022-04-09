@@ -178,7 +178,7 @@ public:
      * Print some verticesIDs to the console
      * @param verticesIDs The vertices IDs
      */
-    static void printVertices(vector<char> verticesIDs) {
+    static void printVertices(const vector<char>& verticesIDs) {
         for (auto v: verticesIDs) {
             cout << v << " ";
         }
